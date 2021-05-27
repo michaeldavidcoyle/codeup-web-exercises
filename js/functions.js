@@ -10,10 +10,8 @@
  */
 
 function sayHello(name) {
-    return "Hello, " + name;
+    return "Hello, " + name + "!";
 }
-
-console.log(sayHello("Codeup"));
 
 /**
  * TODO:
@@ -22,6 +20,10 @@ console.log(sayHello("Codeup"));
  *
  * console.log 'helloMessage' to check your work
  */
+
+var helloMessage = sayHello("Codeup")
+
+console.log(helloMessage);
 
 /**
  * TODO:
