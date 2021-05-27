@@ -38,23 +38,15 @@ var weeklyPay = (weeklyHoursCompany1 * hourlyRate1) + (weeklyHoursCompany2 * hou
 
 alert("Your weekly pay is $" + weeklyPay);
 
-var classIsFull = false;
-var hasScheduleConflict = false;
+var classIsFull = confirm("Is the class full?");
+var hasScheduleConflict = confirm("Do you have a schedule conflict?");
 var canEnroll = !classIsFull && !hasScheduleConflict;
 
-if (canEnroll) {
-    alert("You can enroll in this class.")
-} else {
-    alert("You cannot enroll in this class.")
-}
+alert("You can enroll in this class: " + canEnroll);
 
-var offerExpired = false;
+var offerExpired = confirm("Is the offer expired?");
 var cartItemCount = Number( prompt("How many items are you buying today?") );
 var isPremiumMember = confirm("Are you a premium member?");
 var offerApplicable = !offerExpired && (isPremiumMember || cartItemCount > 2);
 
-if (offerApplicable) {
-    alert("You're eligible for the product offer!");
-} else {
-    alert("Sorry, you're not eligible for the product offer.");
-}
+alert("You're eligible for the product offer: " + offerApplicable);
