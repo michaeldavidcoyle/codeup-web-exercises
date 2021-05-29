@@ -92,7 +92,7 @@ var billTotal = Number( prompt("Enter bill total: ") );
 var tipPercentage = Number( prompt("Enter percent to tip (as whole number): ") );
 var tip = billTotal * (tipPercentage / 100);
 
-alert("The tip is $" + tip.toFixed(2));
+alert(tipPercentage + "% of $" + billTotal + " is a tip of $" + tip.toFixed(2));
 
 /**
  * TODO:
