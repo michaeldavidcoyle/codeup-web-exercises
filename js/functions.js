@@ -62,6 +62,7 @@ function isTwo(number) {
     return number === 2;
 }
 
+console.log("random number: " + random);
 console.log( isTwo(random) );
 
 /**
