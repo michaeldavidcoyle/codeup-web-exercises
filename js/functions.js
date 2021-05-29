@@ -117,6 +117,4 @@ var originalPrice = Number( prompt("Enter price: ") ).toFixed(2);
 var discountPercentage = Number( prompt("Enter discount percent as a whole number: ") );
 var finalPrice = applyDiscount(originalPrice, discountPercentage).toFixed(2);
 
-console.log(
-    "With a " + discountPercentage + "% discount, the original price of $" + originalPrice + " is reduced to $" + finalPrice
-);
+alert("With a " + discountPercentage + "% discount, the original price of $" + originalPrice + " is reduced to $" + finalPrice);
