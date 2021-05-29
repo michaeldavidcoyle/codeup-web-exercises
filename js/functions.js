@@ -113,8 +113,10 @@ function applyDiscount(price, discountPercent) {
     return price - (price * discountPercent);
 }
 
-var originalPrice = 99.95;
-var discountPercentage = 0.25;
-var finalPrice = applyDiscount(originalPrice, discountPercentage);
+var originalPrice = Number( prompt("Enter price: ") ).toFixed(2);
+var discountPercentage = Number( prompt("Enter discount percent as a whole number: ") );
+var finalPrice = applyDiscount(originalPrice, discountPercentage).toFixed(2);
 
-console.log("After the " + (discountPercentage * 100) + "% discount, your total is $" + finalPrice.toFixed(2));
+console.log(
+    "With a " + discountPercentage + "% discount, the original price of $" + originalPrice + " is reduced to $" + finalPrice
+);
