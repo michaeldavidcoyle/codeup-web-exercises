@@ -21,7 +21,7 @@ function sayHello(name) {
  * console.log 'helloMessage' to check your work
  */
 
-var helloMessage = sayHello("Codeup")
+var helloMessage = sayHello("Michael")
 
 console.log(helloMessage);
 
