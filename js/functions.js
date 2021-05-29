@@ -1,7 +1,6 @@
 "use strict";
 
 /**
- * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
  * When called, the function should return a message that says hello to the passed in name.
  *
@@ -14,7 +13,6 @@ function sayHello(name) {
 }
 
 /**
- * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
  * Store the result of the function call in a variable named 'helloMessage'.
  *
@@ -26,7 +24,6 @@ var helloMessage = sayHello("Michael")
 console.log(helloMessage);
 
 /**
- * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
@@ -41,7 +38,6 @@ console.log(sayHello(myName));
 var random = Math.floor((Math.random() * 3) + 1);
 
 /**
- * TODO:
  * Create a function called 'isTwo' that takes a number as a parameter.
  * The function should return a boolean value based on whether or not the passed
  * number is the number 2.
@@ -66,7 +62,6 @@ console.log("random number: " + random);
 console.log( isTwo(random) );
 
 /**
- * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
  * restaurant. The function should accept a tip percentage and the total of the
  * bill, and return the amount to tip
@@ -82,7 +77,6 @@ function calculateTip(percent, total) {
 }
 
 /**
- * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
@@ -90,12 +84,11 @@ function calculateTip(percent, total) {
 
 var billTotal = Number( prompt("Enter bill total: ") );
 var tipPercentage = Number( prompt("Enter percent to tip (as whole number): ") );
-var tip = billTotal * (tipPercentage / 100);
+var tip = calculateTip(tipPercentage / 100, billTotal);
 
 alert(tipPercentage + "% of $" + billTotal + " is a tip of $" + tip.toFixed(2));
 
 /**
- * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
  * (before a discount is applied), and a discount percentage (a number between 0
  * and 1). It should return the result of applying the discount to the original
