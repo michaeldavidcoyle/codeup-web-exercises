@@ -110,7 +110,7 @@ alert(tipPercentage + "% of $" + billTotal + " is a tip of $" + tip.toFixed(2));
  */
 
 function applyDiscount(price, discountPercent) {
-    return price - (price * discountPercent);
+    return price - (price * (discountPercent / 100));
 }
 
 var originalPrice = Number( prompt("Enter price: ") ).toFixed(2);
