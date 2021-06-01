@@ -134,22 +134,25 @@ function calculateTotal(luckyNumber, total) {
     return total - (total * discount);
 }
 
-console.log( "Total is: $" + calculateTotal(0, 100).toFixed(2) );
-console.log( "Total is: $" + calculateTotal(1, 100).toFixed(2) );
-console.log( "Total is: $" + calculateTotal(2, 100).toFixed(2) );
-console.log( "Total is: $" + calculateTotal(3, 100).toFixed(2) );
-console.log( "Total is: $" + calculateTotal(4, 100).toFixed(2) );
-console.log( "Total is: $" + calculateTotal(5, 100).toFixed(2) );
+console.log( "Total: $" + calculateTotal(0, 100).toFixed(2) );
+console.log( "Total: $" + calculateTotal(1, 100).toFixed(2) );
+console.log( "Total: $" + calculateTotal(2, 100).toFixed(2) );
+console.log( "Total: $" + calculateTotal(3, 100).toFixed(2) );
+console.log( "Total: $" + calculateTotal(4, 100).toFixed(2) );
+console.log( "Total: $" + calculateTotal(5, 100).toFixed(2) );
 
 /**
- * TODO:
- * Uncomment the line below to generate a random number between 0 and 6.
+ * Uncomment the line below to generate a random number between 0 and 5.
  * Prompt the user for their total bill, then use your `calculateTotal` function
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+// Generate a random number between 0 and 5
+var luckyNumber = Math.floor(Math.random() * 6);
+var subtotal = 100;
+alert(
+    "Subtotal: " + subtotal + ". Lucky number: " + luckyNumber + ". Total with discount: " + calculateTotal(luckyNumber, subtotal)
+);
 
 /**
  * TODO:
