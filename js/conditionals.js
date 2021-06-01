@@ -170,3 +170,21 @@ alert(
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+var wantsToParticipate = confirm("Would you like to enter a number?");
+
+if (wantsToParticipate) {
+    var userInput = prompt("Enter a whole number: ");
+    var userNumber = Number(userInput);
+    var evenOrOdd = userNumber % 2 == 0 ? "even" : "odd";
+    var plus100 = userNumber + 100;
+    var negativeOrPositive = userNumber < 0 ? "negative" : "positive";
+
+    if (isNaN(userInput)) {
+        alert('Sorry, but, "' + userInput + '" is not a number.');
+    } else {
+        alert(userNumber + " is an " + evenOrOdd + " number.");
+        alert(userNumber + " + 100 = " + plus100);
+        alert(userNumber + " is a " + negativeOrPositive + " number.");
+    }
+}
