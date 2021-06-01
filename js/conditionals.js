@@ -171,9 +171,9 @@ alert(
  * HINT: The way we prompt for a value could be improved
  */
 
-var wantsToParticipate = confirm("Would you like to enter a number?");
+var userWantsToParticipate = confirm("Would you like to enter a number?");
 
-if (wantsToParticipate) {
+if (userWantsToParticipate) {
     var userInput = prompt("Enter a whole number: ");
     var userNumber = Number(userInput);
     var evenOrOdd = userNumber % 2 == 0 ? "even" : "odd";
