@@ -29,13 +29,13 @@ function analyzeColor(color) {
     } else if (color == 'cyan') {
         message = "I don't know anything about cyan.";
     } else {
-        message = "I'm not familiar with that color."
+        message = "I don't know what to say about " + color + "."
     }
 
     return message;
 }
 
-console.log(analyzeColor('green'));
+console.log(analyzeColor('blue'));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -49,6 +49,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+
+console.log( analyzeColor(randomColor) );
 
 /**
  * TODO:
