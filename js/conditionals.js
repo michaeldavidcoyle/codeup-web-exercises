@@ -3,7 +3,6 @@
 /* ########################################################################## */
 
 /**
- * TODO:
  * Create a function named `analyzeColor` that accepts a string that is a color
  * name as input. This function should return a message that related to that
  * color. Only worry about the colors defined below, if the color passed is not
@@ -19,6 +18,24 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+
+function analyzeColor(color) {
+    var message;
+
+    if (color == 'blue') {
+        message = "Blue is the color of the sky.";
+    } else if (color == 'red') {
+        message = "Strawberries are red.";
+    } else if (color == 'cyan') {
+        message = "I don't know anything about cyan.";
+    } else {
+        message = "I'm not familiar with that color."
+    }
+
+    return message;
+}
+
+console.log(analyzeColor('green'));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
