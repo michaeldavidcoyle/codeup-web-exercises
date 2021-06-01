@@ -19,7 +19,7 @@
  * console.logging the function's return value
  */
 
-function analyzeColor(color) {
+function analyzeColorIf(color) {
     var message;
 
     if (color == 'blue') {
@@ -29,12 +29,12 @@ function analyzeColor(color) {
     } else if (color == 'cyan') {
         message = "I don't know anything about cyan.";
     } else {
-        message = "I don't know what to say about " + color + "."
+        message = "I don't know what to say about " + color + ".";
     }
     return message;
-
 }
-console.log(analyzeColor('blue'));
+
+console.log(analyzeColorIf('blue'));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -49,7 +49,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-console.log( analyzeColor(randomColor) );
+console.log( analyzeColorIf(randomColor) );
 
 /**
  * Refactor your above function to use a switch-case statement
@@ -69,7 +69,7 @@ function analyzeColor(color) {
             message = "I don't know anything about cyan.";
             break;
         default:
-            message = "I don't know what to say about " + color + "."
+            message = "I don't know what to say about " + color + ".";
             break;
     }
 
@@ -77,7 +77,6 @@ function analyzeColor(color) {
 }
 
 /**
- * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
