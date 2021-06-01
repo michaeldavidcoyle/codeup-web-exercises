@@ -31,10 +31,9 @@ function analyzeColor(color) {
     } else {
         message = "I don't know what to say about " + color + "."
     }
-
     return message;
-}
 
+}
 console.log(analyzeColor('blue'));
 
 // Don't change the next two lines!
@@ -42,10 +41,10 @@ console.log(analyzeColor('blue'));
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
+
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
- * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
@@ -53,9 +52,29 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 console.log( analyzeColor(randomColor) );
 
 /**
- * TODO:
  * Refactor your above function to use a switch-case statement
  */
+
+function analyzeColor(color) {
+    var message;
+
+    switch (color) {
+        case "blue":
+            message = "Blue is the color of the sky.";
+            break;
+        case "red":
+            message = "Strawberries are red.";
+            break;
+        case "cyan":
+            message = "I don't know anything about cyan.";
+            break;
+        default:
+            message = "I don't know what to say about " + color + "."
+            break;
+    }
+
+    return message;
+}
 
 /**
  * TODO:
@@ -63,6 +82,10 @@ console.log( analyzeColor(randomColor) );
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+var userColor = prompt("Enter a color: ");
+
+alert(analyzeColor(userColor));
 
 /* ########################################################################## */
 
