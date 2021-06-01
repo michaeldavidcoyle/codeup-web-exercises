@@ -89,7 +89,6 @@ alert(analyzeColor(userColor));
 /* ########################################################################## */
 
 /**
- * TODO:
  * Suppose there's a promotion in Walmart, each customer is given a randomly
  * generated "lucky number" between 0 and 5. If your lucky number is 0 you have
  * no discount, if your lucky number is 1 you'll get a 10% discount, if it's 2,
@@ -107,6 +106,40 @@ alert(analyzeColor(userColor));
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+
+function calculateTotal(luckyNumber, total) {
+    var discount;
+
+    switch (luckyNumber) {
+        case 0:
+            discount = 0;
+            break;
+        case 1:
+            discount = 0.1;
+            break;
+        case 2:
+            discount = 0.25;
+            break;
+        case 3:
+            discount = 0.35;
+            break;
+        case 4:
+            discount = 0.5
+            break;
+        case 5:
+            discount = 1;
+            break;
+    }
+
+    return total - (total * discount);
+}
+
+console.log( "Total is: $" + calculateTotal(0, 100).toFixed(2) );
+console.log( "Total is: $" + calculateTotal(1, 100).toFixed(2) );
+console.log( "Total is: $" + calculateTotal(2, 100).toFixed(2) );
+console.log( "Total is: $" + calculateTotal(3, 100).toFixed(2) );
+console.log( "Total is: $" + calculateTotal(4, 100).toFixed(2) );
+console.log( "Total is: $" + calculateTotal(5, 100).toFixed(2) );
 
 /**
  * TODO:
