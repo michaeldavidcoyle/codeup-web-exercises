@@ -185,7 +185,7 @@ if (userWantsToParticipate) {
     } else {
         alert(
             userNumber + " is an " + evenOrOdd + " number." + "\n" +
-            userNumber + " + 100 = " + plus100 + "\n" +
+            userNumber + " + 100 = " + plus100 + "\n" +""
             userNumber + " is a " + negativeOrPositive + " number."
         );
     }
