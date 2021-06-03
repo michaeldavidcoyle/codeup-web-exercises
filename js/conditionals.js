@@ -183,8 +183,10 @@ if (userWantsToParticipate) {
     if (isNaN(userInput)) {
         alert('Sorry, but, "' + userInput + '" is not a number.');
     } else {
-        alert(userNumber + " is an " + evenOrOdd + " number.");
-        alert(userNumber + " + 100 = " + plus100);
-        alert(userNumber + " is a " + negativeOrPositive + " number.");
+        alert(
+            userNumber + " is an " + evenOrOdd + " number." + "\n" +
+            userNumber + " + 100 = " + plus100 + "\n" +
+            userNumber + " is a " + negativeOrPositive + " number."
+        );
     }
 }
