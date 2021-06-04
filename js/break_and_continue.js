@@ -11,7 +11,11 @@ while (inputIsValid) {
     }
 }
 
-for (var i = 1; i < 50;  i += 2) {
+for (var i = 1; i < 50;  i++) {
+    if (i % 2 === 0) {
+        continue;
+    }
+
     if (i === userNumber) {
         console.log('Yikes! Skipping number: ' + userNumber);
         continue;
