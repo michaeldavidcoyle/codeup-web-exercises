@@ -45,10 +45,10 @@ do {
         console.log(cones + ' cones sold!');
     } else {
         console.log('Sorry, I only have ' + totalCones + ' cones left.');
-        break;
+        continue;
     }
 
     totalCones -= cones;
 } while (totalCones > 0);
 
-console.log(totalCones + ' cones unsold ');
+console.log('Sold out!');
