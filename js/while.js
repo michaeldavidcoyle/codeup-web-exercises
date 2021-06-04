@@ -35,25 +35,20 @@ while (int < 65536) {
  console the amount of cones sold to each person.
 */
 
-var maxCones = 100,
-    minCones = 50;
-
-var maxSold = 5,
-    minSold = 1;
-
-var totalCones = Math.floor(Math.random() * (maxCones - minCones + 1) + minCones),
+var totalCones = Math.floor(Math.random() * 51 + 50),
     conesSold;
 
 do {
-    conesSold = Math.floor(Math.random() * (maxSold - minSold + 1) + minSold);
+    conesSold = Math.floor(Math.random() * 6 + 5);
 
-    totalCones -= conesSold;
+    totalCones -= conesSold
 
-    if (totalCones < conesSold) {
+    if (conesSold <= totalCones) {
         console.log(conesSold + ' cones sold!');
     } else {
         console.log('Sorry, I only have ' + totalCones + ' cones left.');
+        break;
     }
 } while (totalCones > 0);
 
-console.log('Only ' + totalCones + ' left');
+console.log(totalCones + ' unsold');
