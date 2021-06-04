@@ -41,14 +41,14 @@ var totalCones = Math.floor(Math.random() * 51 + 50),
 do {
     conesSold = Math.floor(Math.random() * 6 + 5);
 
-    totalCones -= conesSold
-
     if (conesSold <= totalCones) {
         console.log(conesSold + ' cones sold!');
     } else {
         console.log('Sorry, I only have ' + totalCones + ' cones left.');
         break;
     }
+
+    totalCones -= conesSold;
 } while (totalCones > 0);
 
-console.log(totalCones + ' unsold');
+console.log(totalCones + ' cones unsold :(');
