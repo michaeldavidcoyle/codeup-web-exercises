@@ -39,7 +39,7 @@ var totalCones = Math.floor(Math.random() * 51 + 50),
     conesSold;
 
 do {
-    conesSold = Math.floor(Math.random() * 6 + 5);
+    conesSold = Math.floor(Math.random() * 5 + 1);
 
     if (conesSold <= totalCones) {
         console.log(conesSold + ' cones sold!');
