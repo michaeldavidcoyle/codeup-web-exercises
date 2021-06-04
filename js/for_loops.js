@@ -11,3 +11,8 @@ function showMultiplicationTable(integer) {
 
     console.log(table);
 }
+
+// display results of calling showMultiplicationTable
+for (var i = 1; i <= 10; i++) {
+    showMultiplicationTable(i);
+}
