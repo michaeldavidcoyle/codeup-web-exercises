@@ -36,3 +36,23 @@ for (var i = 0; i < 10; i++) {
         console.log(random + ' is odd');
     }
 }
+
+/*
+ Create a for loop that uses console.log to create the output shown below.
+ 1
+ 22
+ 333
+ 4444
+ 55555
+ 666666
+ 7777777
+ 88888888
+ 999999999
+*/
+for (var i = 1; i < 10; i++) {
+    var str = '';
+    for (var j = 1; j <= i; j++) {
+        str += i;
+    }
+    console.log(str);
+}
