@@ -6,9 +6,16 @@ var userNumber;
 while (inputIsValid) {
     userNumber = +prompt('Enter an odd number between 1 and 50');
 
-    if (!isNaN(input) && userNumber % 2 === 1) {
+    if (!isNaN(userNumber) && userNumber % 2 === 1) {
         break;
     }
 }
 
-console.log('Yay!');
+for (var i = 1; i < 50;  i += 2) {
+    if (i === userNumber) {
+        console.log('Yikes! Skipping number: ' + userNumber);
+        continue;
+    }
+
+    console.log('Here is an odd number: ' + i);
+}
