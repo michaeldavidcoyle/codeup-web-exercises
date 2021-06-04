@@ -36,19 +36,19 @@ while (int < 65536) {
 */
 
 var totalCones = Math.floor(Math.random() * 51 + 50),
-    conesSold;
+    cones;
 
 do {
-    conesSold = Math.floor(Math.random() * 5 + 1);
+    cones = Math.floor(Math.random() * 5 + 1);
 
-    if (conesSold <= totalCones) {
-        console.log(conesSold + ' cones sold!');
+    if (cones <= totalCones) {
+        console.log(cones + ' cones sold!');
     } else {
         console.log('Sorry, I only have ' + totalCones + ' cones left.');
         break;
     }
 
-    totalCones -= conesSold;
+    totalCones -= cones;
 } while (totalCones > 0);
 
-console.log(totalCones + ' cones unsold :(');
+console.log(totalCones + ' cones unsold ');
