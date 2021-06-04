@@ -8,7 +8,7 @@ var userNumber;
 while (inputIsValid) {
     userNumber = +prompt('Enter an odd number between 1 and 50');
 
-    if (!isNaN(userNumber) && userNumber % 2 === 1) {
+    if (!isNaN(userNumber) && userNumber < 50 && userNumber > 0 && userNumber % 2 === 1) {
         break;
     }
 }
