@@ -49,4 +49,6 @@ do {
     totalCones -= conesSold;
 
     console.log(conesSold + ' cones sold!');
-} while(totalCones > 0);
+} while (totalCones > 0);
+
+console.log('Only ' + totalCones + ' left');
