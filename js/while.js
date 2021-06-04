@@ -32,6 +32,21 @@ while (int < 65536) {
  amount of cones to sell before you start your loop. Inside of the loop your
  code should generate another random number between 1 and 5, simulating the
  amount of cones being bought by her clients. Use a do-while loop to log to the
- console the amount of cones sold to each person. This is a way get the random
- numbers for this exercise.
+ console the amount of cones sold to each person.
 */
+
+var maxCones = 100,
+    minCones = 50;
+
+var maxSold = 5,
+    minSold = 1;
+
+var totalCones = Math.floor(Math.random() * (maxCones - minCones + 1) + minCones);
+
+do {
+    var conesSold = Math.floor(Math.random() * (maxSold - minSold + 1) + minSold);
+
+    totalCones -= conesSold;
+
+    console.log(conesSold + ' cones sold!');
+} while(totalCones > 0);
