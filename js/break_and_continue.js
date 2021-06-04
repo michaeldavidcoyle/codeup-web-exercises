@@ -1,12 +1,12 @@
 "use strict";
 
 var inputIsValid = true;
-var input;
+var userNumber;
 
 while (inputIsValid) {
-    input = +prompt('Enter an odd number between 1 and 50');
+    userNumber = +prompt('Enter an odd number between 1 and 50');
 
-    if (!isNaN(input) && input % 2 === 1) {
+    if (!isNaN(input) && userNumber % 2 === 1) {
         break;
     }
 }
