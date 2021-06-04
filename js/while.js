@@ -41,14 +41,19 @@ var maxCones = 100,
 var maxSold = 5,
     minSold = 1;
 
-var totalCones = Math.floor(Math.random() * (maxCones - minCones + 1) + minCones);
+var totalCones = Math.floor(Math.random() * (maxCones - minCones + 1) + minCones),
+    conesSold;
 
 do {
-    var conesSold = Math.floor(Math.random() * (maxSold - minSold + 1) + minSold);
+    conesSold = Math.floor(Math.random() * (maxSold - minSold + 1) + minSold);
 
     totalCones -= conesSold;
 
-    console.log(conesSold + ' cones sold!');
+    if (totalCones < conesSold) {
+        console.log(conesSold + ' cones sold!');
+    } else {
+        console.log('Sorry, I only have ' + totalCones + ' cones left.');
+    }
 } while (totalCones > 0);
 
 console.log('Only ' + totalCones + ' left');
