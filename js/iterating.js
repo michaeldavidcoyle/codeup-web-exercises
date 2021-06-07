@@ -13,12 +13,14 @@
      * array.
      */
 
-    console.log('The names array has ' + names.length + ' elements');
+    console.log('The names array has ' + names.length + ' elements.');
 
     /**
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
+    console.log('\n', 'individual console.logs');
+
     console.log(names[0]);
     console.log(names[1]);
     console.log(names[2]);
@@ -28,7 +30,7 @@
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
-    console.log('for loop: ');
+    console.log('\n', 'for loop: ');
     for (var index = 0; index < names.length; index++) {
         console.log(names[index])
     }
@@ -36,7 +38,7 @@
     /**
      * Refactor your above code to use a `forEach` loop
      */
-    console.log('forEach: ');
+    console.log('\n', 'forEach: ');
     names.forEach(function(name) {
         console.log(name);
     });
@@ -53,6 +55,7 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
+    console.log('\n', 'tests for first, second and last functions');
 
     function first(array) {
         return array[0];
