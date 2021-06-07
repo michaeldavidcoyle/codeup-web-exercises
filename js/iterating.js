@@ -28,15 +28,18 @@
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
-    console.log('for loop');
+    console.log('for loop: ');
     for (var index = 0; index < names.length; index++) {
         console.log(names[index])
     }
 
     /**
-     * TODO:
      * Refactor your above code to use a `forEach` loop
      */
+    console.log('forEach: ');
+    names.forEach(function(name) {
+        console.log(name);
+    });
 
     /**
      * TODO:
