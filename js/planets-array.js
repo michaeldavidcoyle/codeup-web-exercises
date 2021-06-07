@@ -31,6 +31,7 @@
     console.log(planets);
 
     console.log('Removing "Pluto" from the end of the planets array.');
+    planets.pop();
     console.log(planets);
 
     console.log('Finding and logging the index of "Earth" in the planets array.');
