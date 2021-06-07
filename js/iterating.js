@@ -9,10 +9,11 @@
     var names = ['John', 'Paul', 'George', 'Ringo'];
 
     /**
-     * TODO:
      * Create a log statement that will log the number of elements in the names
      * array.
      */
+
+    console.log('The names array has ' + names.length + ' elements');
 
     /**
      * TODO:
