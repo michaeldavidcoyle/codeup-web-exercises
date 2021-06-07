@@ -60,4 +60,10 @@
     }
 
     console.log(first([1, 2, 3]));
+
+    function second(array) {
+        return array[1];
+    }
+
+    console.log(second([1, 2, 3]));
 })();
