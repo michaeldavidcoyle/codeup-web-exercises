@@ -1,6 +1,7 @@
 "use strict";
 
-var wantsToPlay = confirm('Would you like to play the high/low game?');
+var wantsToPlay = confirm('Would you like to play the high/low game?'),
+    guessCount = 1;
 
 if (wantsToPlay) {
     do {
@@ -16,9 +17,11 @@ if (wantsToPlay) {
         } else if (guess > myNumber) {
             guess = +prompt('My number is lower. Guess again.');
         }
+
+        guessCount++;
     }
 
-    alert('Yes! You guessed my number, ' + myNumber + '.\nRefresh to play again.');
+    alert('Yes! You guessed my number, ' + myNumber + '.\nIt took you' + guessCount + ' guesses.\nRefresh to play again.');
 } else {
     alert('No hard feelings. Goodbye.')
 }
