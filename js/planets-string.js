@@ -24,4 +24,6 @@
      * string, and <li> tags around each planet.
      */
 
+    var planetsStringBreakTags = planetsArray.join('<br>');
+    console.log(planetsStringBreakTags);
 })();
