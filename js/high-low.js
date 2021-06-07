@@ -3,7 +3,8 @@
 var wantsToPlay = confirm('Would you like to play the high/low game?');
 
 if (wantsToPlay) {
-    alert('Cool, let me finish coding the game.');
+    var myNumber = Math.ceil(Math.random() * 100);
+    console.log('My number is ' + myNumber);
 } else {
     alert('No hard feelings. Goodbye.')
 }
