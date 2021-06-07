@@ -14,7 +14,7 @@ if (wantsToPlay) {
         }
     }
 
-    alert('Yes! You guessed my number, ' + myNumber);
+    alert('Yes! You guessed my number, ' + myNumber + '\n. Refresh to play again.');
 } else {
     alert('No hard feelings. Goodbye.')
 }
