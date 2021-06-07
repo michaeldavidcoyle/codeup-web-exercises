@@ -13,9 +13,9 @@ if (wantsToPlay) {
 
     while (guess != myNumber) {
         if (guess < myNumber) {
-            guess = +prompt('My number is higher. Guess again.');
+            guess = +prompt('Not ' + guess + ', my number is higher. Guess again.');
         } else if (guess > myNumber) {
-            guess = +prompt('My number is lower. Guess again.');
+            guess = +prompt('Not ' + guess + ', my number is lower. Guess again.');
         }
 
         guessCount++;
