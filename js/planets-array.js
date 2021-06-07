@@ -42,5 +42,6 @@
     console.log(planets);
 
     console.log("Sorting the planets array.");
+    planets.sort();
     console.log(planets);
 })();
