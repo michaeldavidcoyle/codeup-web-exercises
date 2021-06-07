@@ -6,7 +6,15 @@ if (wantsToPlay) {
     var myNumber = Math.ceil(Math.random() * 100);
     var guess = +prompt("I'm thinking of a number from 1 to 100. Can you guess my number?");
 
-    console.log(guess);
+    while (guess != myNumber) {
+        if (guess < myNumber) {
+            guess = +prompt('My number is higher. Guess again.');
+        } else if (guess > myNumber) {
+            guess = +prompt('My number is lower. Guess again.');
+        }
+    }
+
+    alert('Yes! You guessed my number, ' + myNumber);
 } else {
     alert('No hard feelings. Goodbye.')
 }
