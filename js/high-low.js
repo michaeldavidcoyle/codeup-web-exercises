@@ -21,7 +21,7 @@ if (wantsToPlay) {
         guessCount++;
     }
 
-    alert('Yes! You guessed my number, ' + myNumber + '.\nIt took you' + guessCount + ' guesses.\nRefresh to play again.');
+    alert('Yes! You guessed my number, ' + myNumber + '.\nIt took you ' + guessCount + ' guesses.\nRefresh to play again.');
 } else {
     alert('No hard feelings. Goodbye.')
 }
