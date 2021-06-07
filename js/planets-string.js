@@ -5,13 +5,13 @@
     var planetsArray;
 
     /**
-     * TODO:
      * Convert planetsString to an array, and save it in a variable named
      * planetsArray.
      * console.log planetsArray to check your work
      */
 
-    // console.log(planetsArray);
+    var planetsArray = planetsString.split('|');
+    console.log(planetsArray);
 
     /**
      * TODO:
