@@ -19,7 +19,6 @@
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
-
     console.log(names[0]);
     console.log(names[1]);
     console.log(names[2]);
@@ -29,7 +28,7 @@
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
-
+    console.log('for loop');
     for (var index = 0; index < names.length; index++) {
         console.log(names[index])
     }
