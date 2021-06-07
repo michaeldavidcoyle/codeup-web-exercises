@@ -3,9 +3,9 @@
 var wantsToPlay = confirm('Would you like to play the high/low game?');
 
 if (wantsToPlay) {
-    var max = +prompt('Enter a maximum number: ');
+    var max = +prompt('Enter a maximum number (whole numbers only please).\nThe higher the number, the longer the game.');
     var myNumber = Math.ceil(Math.random() * max);
-    var guess = +prompt("I'm thinking of a number from 1 to " + max + ". Can you guess my number?");
+    var guess = +prompt("Alright, I'm thinking of a number from 1 to " + max + ". Can you guess my number?");
 
     while (guess != myNumber) {
         if (guess < myNumber) {
