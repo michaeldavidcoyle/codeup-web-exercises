@@ -59,19 +59,17 @@
         return array[0];
     }
 
-    var testArray = [1, 2, 3];
-
-    console.log(first(testArray));
+    console.log('The first element in the names array is ' + first(names));
 
     function second(array) {
         return array[1];
     }
 
-    console.log(second(testArray));
+    console.log('The second element in the names array is ' + second(names));
 
     function last(array) {
         return array[array.length - 1];
     }
 
-    console.log(last(testArray));
+    console.log('The last element in the names array is ' + last(names));
 })();
