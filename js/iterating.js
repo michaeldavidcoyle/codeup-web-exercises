@@ -26,10 +26,13 @@
     console.log(names[3]);
 
     /**
-     * TODO:
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
+
+    for (var index = 0; index < names.length; index++) {
+        console.log(names[index])
+    }
 
     /**
      * TODO:
