@@ -125,6 +125,10 @@
         }
     ];
 
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
