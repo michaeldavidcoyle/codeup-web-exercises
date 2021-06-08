@@ -214,4 +214,14 @@
             'Author: ' + book.author.firstName + ' ' + book.author.lastName + '\n' +
             '---';
     }
+
+    /*
+        // Or it could be done with console.logs
+        function showBookInfo(book, index) {
+            console.log('Book #' + (index + 1));
+            console.log('Title: ' + book.title);
+            console.log('Author: ' + book.author.firstName + ' ' + book.author.lastName);
+            console.log('---');
+        }
+     */
 })();
