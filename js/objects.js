@@ -2,7 +2,6 @@
     "use strict";
 
     /**
-     * TODO:
      * Create an object with firstName and lastName properties that are strings
      * with your first and last name. Store this object in a variable named
      * `person`.
@@ -11,6 +10,14 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+
+    var person = {
+        firstName: 'Michael',
+        lastName: 'Coyle'
+    }
+
+    console.log(person.firstName);
+    console.log(person.lastName);
 
     /**
      * TODO:
