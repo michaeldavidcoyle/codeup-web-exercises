@@ -162,11 +162,16 @@
      *      ...
      */
 
+    // Initial solution
+    // books.forEach(function(book, index) {
+    //     console.log('Book #' + (index + 1));
+    //     console.log('Title: ' + book.title);
+    //     console.log('Author: ' + book.author.firstName + ' ' + book.author.lastName);
+    //     console.log('---');
+    // });
+    // Refactored for bonus
     books.forEach(function(book, index) {
-        console.log('Book #' + (index + 1));
-        console.log('Title: ' + book.title);
-        console.log('Author: ' + book.author.firstName + ' ' + book.author.lastName);
-        console.log('---');
+        console.log(showBookInfo(book, index));
     });
 
     /**
@@ -197,5 +202,10 @@
     console.log( createBook('Superintelligence: Paths, Dangers, Strategies', 'Nick Bostrom') );
     console.log( createBook('Blindness', {firstName: 'Jose', lastName: 'Saramago'}) );
 
-    function showBookInfo(book) {}
+    function showBookInfo(book, index) {
+        return 'Book #' + (index + 1) + '\n' +
+            'Title: ' + book.title + '\n' +
+            'Author: ' + book.author.firstName + ' ' + book.author.lastName + '\n' +
+            '---';
+    }
 })();
