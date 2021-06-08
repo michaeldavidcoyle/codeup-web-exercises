@@ -125,12 +125,11 @@
         }
     ];
 
-    books.forEach(function(book) {
-        console.log(book.title + ' by ' + book.author.firstName + ' ' + book.author.lastName);
-    });
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
 
     /**
-     * TODO:
      * Loop through the books array and output the following information about
      * each book:
      * - the book number (use the index of the book in the array)
@@ -153,6 +152,13 @@
      *      ---
      *      ...
      */
+
+    books.forEach(function(book, index) {
+        console.log('Book #' + (index + 1));
+        console.log('Title: ' + book.title);
+        console.log('Author: ' + book.author.firstName + ' ' + book.author.lastName);
+        console.log('---');
+    });
 
     /**
      * Bonus:
