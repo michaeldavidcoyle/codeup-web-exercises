@@ -87,42 +87,51 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    // Initial solution
+    // var books = [
+    //     {
+    //         title: 'The Cat in the Hat',
+    //         author: {
+    //             firstName: 'Dr.',
+    //             lastName: 'Seuss'
+    //         }
+    //     },
+    //     {
+    //         title: 'You Don\'t Know JavaScript',
+    //         author: {
+    //             firstName: 'Kyle',
+    //             lastName: 'Simpson'
+    //         }
+    //     },
+    //     {
+    //         title: 'The Razor\'s Edge',
+    //         author: {
+    //             firstName: 'Somerset',
+    //             lastName: 'Maugham'
+    //         }
+    //     },
+    //     {
+    //         title: 'The Object Stares Back',
+    //         author: {
+    //             firstName: 'James',
+    //             lastName: 'Elkins'
+    //         }
+    //     },
+    //     {
+    //         title: 'A River Runs Through It',
+    //         author: {
+    //             firstName: 'Norman',
+    //             lastName: 'Maclean'
+    //         }
+    //     }
+    // ];
+    // Refactoring for bonus
     var books = [
-        {
-            title: 'The Cat in the Hat',
-            author: {
-                firstName: 'Dr.',
-                lastName: 'Seuss'
-            }
-        },
-        {
-            title: 'You Don\'t Know JavaScript',
-            author: {
-                firstName: 'Kyle',
-                lastName: 'Simpson'
-            }
-        },
-        {
-            title: 'The Razor\'s Edge',
-            author: {
-                firstName: 'Somerset',
-                lastName: 'Maugham'
-            }
-        },
-        {
-            title: 'The Object Stares Back',
-            author: {
-                firstName: 'James',
-                lastName: 'Elkins'
-            }
-        },
-        {
-            title: 'A River Runs Through It',
-            author: {
-                firstName: 'Norman',
-                lastName: 'Maclean'
-            }
-        }
+        createBook('The Cat in the Hat', {firstName: 'Dr.', lastName: 'Seuss'}),
+        createBook('You Don\'t Know JavaScript', {firstName: 'Kyle', lastName: 'Simpson'}),
+        createBook('The Razor\'s Edge', {firstName: 'Somerset', lastName: 'Maugham'}),
+        createBook('The Object Stares Back', {firstName: 'James', lastName: 'Elkins'}),
+        createBook('A River Runs Through It', {firstName: 'Norman', lastName: 'Maclean'})
     ];
 
     console.log(books[0].title);
