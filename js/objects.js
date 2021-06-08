@@ -64,7 +64,7 @@
         if (shopper.amount > 200) {
             discount = shopper.amount * discountRate;
             total -= discount;
-            message += ', so they get a discount of $' + discount.toFixed(2) +
+            message += ', so the discount is $' + discount.toFixed(2) +
                 '. Total with discount is $' + total;
         } else {
             message += ', so no discount applies. Total is $' + total;
