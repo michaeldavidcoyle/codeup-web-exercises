@@ -54,8 +54,24 @@
         {name: 'George', amount: 320}
     ];
 
+    var discountRate = 0.12;
+
     shoppers.forEach(function (shopper) {
-        console.log(shopper.name + ' bought $' + shopper.amount);
+        var discount = 0,
+            message = shopper.name + ' bought $' + shopper.amount,
+            total = shopper.amount;
+
+        if (shopper.amount > 200) {
+            discount = shopper.amount * discountRate;
+            total -= discount;
+            message += ', so they get a discount of $' + discount.toFixed(2) +
+                '. Total with discount is $' + total;
+        } else {
+            message += ', so no discount applies. Total is $' + total;
+        }
+
+        console.log(message);
+
     });
 
     /** TODO:
