@@ -171,5 +171,20 @@
      *   `showBookInfo` function.
      */
 
-    function createBook(title, author) {}
+    function createBook(title, author) {
+        if (typeof author === 'string') {
+            author = {
+                firstName: author.split(' ')[0],
+                lastName: author.split(' ')[1]
+            }
+        }
+
+        return {
+            title: title,
+            author: author
+        }
+    }
+
+    console.log( createBook('Superintelligence: Paths, Dangers, Strategies', 'Nick Bostrom') );
+    console.log( createBook('Blindness', {firstName: 'Jose', lastName: 'Saramago'}) );
 })();
