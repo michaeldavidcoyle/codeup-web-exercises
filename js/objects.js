@@ -196,4 +196,6 @@
 
     console.log( createBook('Superintelligence: Paths, Dangers, Strategies', 'Nick Bostrom') );
     console.log( createBook('Blindness', {firstName: 'Jose', lastName: 'Saramago'}) );
+
+    function showBookInfo(book) {}
 })();
