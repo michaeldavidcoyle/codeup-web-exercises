@@ -74,7 +74,7 @@
 
     });
 
-    /** TODO:
+    /**
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
      * property. The author property should be an object with properties
@@ -117,7 +117,7 @@
             }
         },
         {
-            title: 'A River Runs Through Ii',
+            title: 'A River Runs Through It',
             author: {
                 firstName: 'Norman',
                 lastName: 'Maclean'
@@ -125,9 +125,9 @@
         }
     ];
 
-    console.log(books[0].title);
-    console.log(books[0].author.firstName);
-    console.log(books[0].author.lastName);
+    books.forEach(function(book) {
+        console.log(book.title + ' by ' + book.author.firstName + ' ' + book.author.lastName);
+    });
 
     /**
      * TODO:
