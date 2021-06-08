@@ -87,44 +87,47 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    // Initial solution
-    // var books = [
-    //     {
-    //         title: 'The Cat in the Hat',
-    //         author: {
-    //             firstName: 'Dr.',
-    //             lastName: 'Seuss'
-    //         }
-    //     },
-    //     {
-    //         title: 'You Don\'t Know JavaScript',
-    //         author: {
-    //             firstName: 'Kyle',
-    //             lastName: 'Simpson'
-    //         }
-    //     },
-    //     {
-    //         title: 'The Razor\'s Edge',
-    //         author: {
-    //             firstName: 'Somerset',
-    //             lastName: 'Maugham'
-    //         }
-    //     },
-    //     {
-    //         title: 'The Object Stares Back',
-    //         author: {
-    //             firstName: 'James',
-    //             lastName: 'Elkins'
-    //         }
-    //     },
-    //     {
-    //         title: 'A River Runs Through It',
-    //         author: {
-    //             firstName: 'Norman',
-    //             lastName: 'Maclean'
-    //         }
-    //     }
-    // ];
+    /*
+     // Initial solution
+       var books = [
+           {
+               title: 'The Cat in the Hat',
+               author: {
+                   firstName: 'Dr.',
+                   lastName: 'Seuss'
+               }
+           },
+           {
+               title: 'You Don\'t Know JavaScript',
+               author: {
+                   firstName: 'Kyle',
+                   lastName: 'Simpson'
+               }
+           },
+           {
+               title: 'The Razor\'s Edge',
+               author: {
+                   firstName: 'Somerset',
+                   lastName: 'Maugham'
+               }
+           },
+           {
+               title: 'The Object Stares Back',
+               author: {
+                   firstName: 'James',
+                   lastName: 'Elkins'
+               }
+           },
+           {
+               title: 'A River Runs Through It',
+               author: {
+                   firstName: 'Norman',
+                   lastName: 'Maclean'
+               }
+           }
+       ];
+     */
+
     // Refactoring for bonus
     var books = [
         createBook('The Cat in the Hat', {firstName: 'Dr.', lastName: 'Seuss'}),
@@ -162,13 +165,16 @@
      *      ...
      */
 
-    // Initial solution
-    // books.forEach(function(book, index) {
-    //     console.log('Book #' + (index + 1));
-    //     console.log('Title: ' + book.title);
-    //     console.log('Author: ' + book.author.firstName + ' ' + book.author.lastName);
-    //     console.log('---');
-    // });
+    /*
+      // Initial solution
+       books.forEach(function(book, index) {
+           console.log('Book #' + (index + 1));
+           console.log('Title: ' + book.title);
+           console.log('Author: ' + book.author.firstName + ' ' + book.author.lastName);
+           console.log('---');
+       });
+     */
+
     // Refactored for bonus
     books.forEach(function(book, index) {
         console.log(showBookInfo(book, index));
