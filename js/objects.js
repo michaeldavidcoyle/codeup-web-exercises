@@ -65,9 +65,9 @@
             discount = shopper.amount * discountRate;
             total -= discount;
             message += ', so the discount is $' + discount.toFixed(2) +
-                '. Total with discount is $' + total;
+                '. Total with discount is $' + total.toFixed(2);
         } else {
-            message += ', so no discount applies. Total is $' + total;
+            message += ', so no discount applies. Total is $' + total.toFixed(2);
         }
 
         console.log(message);
