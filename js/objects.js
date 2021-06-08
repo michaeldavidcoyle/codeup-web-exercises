@@ -171,4 +171,5 @@
      *   `showBookInfo` function.
      */
 
+    function createBook(title, author) {}
 })();
