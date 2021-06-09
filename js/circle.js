@@ -6,10 +6,7 @@
         radius: 3,
 
         getArea: function () {
-            // TODO: complete this method
-            // hint: area = pi * radius^2
-
-            return; // TODO: return the proper value
+            return Math.PI * Math.pow(this.radius, 2);
         },
 
         logInfo: function (doRounding) {
