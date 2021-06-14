@@ -6,44 +6,50 @@
 </head>
 <body>
     <form method="POST" action="https://request-inspector.glitch.me/">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="text" placeholder="Enter your email address">
-        <br>
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" placeholder="Create a password">
-        <!-- Because this is a registration page, not a login, maybe there should be a confirm password input here. -->
-        <br>
-        <label for="bio">Bio</label>
-        <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Tell us about yourself"></textarea>
-        <h3>How did you hear about us?</h3>
-        <label for="billboard">
-            billboard<input id="billboard" type="checkbox" name="heard-about-us" value="billboard">
-        </label>
+        <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="text" placeholder="Enter your email address">
+            <br>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Create a password">
+            <!-- Because this is a registration page, not a login, maybe there should be a confirm password input here. -->
+        </div>
+        <div>
+            <label for="bio">Bio</label>
+            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Tell us about yourself"></textarea>
+        </div>
+        <div>
+            How did you hear about us?
+            <br>
+            <label for="billboard">
+                billboard<input id="billboard" type="checkbox" name="heard-about-us" value="billboard">
+            </label>
 
-        <label for="radio-advertisement">
-            radio advertisement<input id="radio-advertisement" type="checkbox" name="heard-about-us" value="radio-advertisement">
-        </label>
+            <label for="radio-advertisement">
+                radio advertisement<input id="radio-advertisement" type="checkbox" name="heard-about-us" value="radio-advertisement">
+            </label>
 
-        <label for="internet-advertisement">
-            internet advertisement<input id="internet-advertisment" type="checkbox" name="heard-about-us" value="internet-advertisment">
-        </label>
+            <label for="internet-advertisment">
+                internet advertisement<input id="internet-advertisment" type="checkbox" name="heard-about-us" value="internet-advertisment">
+            </label>
 
-        <label for="other">
-            other<input id="other" type="checkbox" name="heard-about-us" value="other">
-        </label>
-        <br>
-        <label for="browser">
-            Which web browser do you use?
-            <select name="browser" id="browser">
-                <option value="Google Chrome">Google Chrome</option>
-                <option value="Microsoft Edge">Microsoft Edge</option>
-                <option value="Firefox">Firefox</option>
-                <option value="Safari">Safari</option>
-                <option value="Internet Explorer">Internet Explorer</option>
-                <option value="other">other</option>
-            </select>
-        </label>
-        <br>
+            <label for="other">
+                other<input id="other" type="checkbox" name="heard-about-us" value="other">
+            </label>
+        </div>
+        <div>
+            <label for="browser">
+                Which web browser do you use?
+                <select name="browser" id="browser">
+                    <option value="Google Chrome">Google Chrome</option>
+                    <option value="Microsoft Edge">Microsoft Edge</option>
+                    <option value="Firefox">Firefox</option>
+                    <option value="Safari">Safari</option>
+                    <option value="Internet Explorer">Internet Explorer</option>
+                    <option value="other">other</option>
+                </select>
+            </label>
+        </div>
         <button type="submit">Submit</button>
     </form>
 </body>
