@@ -35,6 +35,11 @@ a {
     padding: 0.5em;
     overflow: auto;
 }
+.media-image {
+    max-width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
 .top-nav {
     background: var(--light-bg);
     position: fixed;
