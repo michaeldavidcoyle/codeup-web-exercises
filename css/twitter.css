@@ -49,6 +49,14 @@ a {
 }
 .profile {
     background: var(--light-bg);
+    height: 80px;
+}
+.profile-header {
+    position: relative;
+}
+.profile-image {
+    position: absolute;
+    top: -2em;
 }
 .btn {
     border: 1px solid var(--main-link-color);
