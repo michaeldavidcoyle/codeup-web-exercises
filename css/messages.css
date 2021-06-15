@@ -9,3 +9,7 @@ body, html {
 .message-info {
     background-color: #c3d5ff;
 }
+
+.message-success {
+    background-color: #bbe5c6;
+}
