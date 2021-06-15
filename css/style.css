@@ -40,6 +40,14 @@ a:active {
     color: green;
 }
 
+.img-float {
+    float: left;
+}
+
+.clear-float {
+    clear: both;
+}
+
 #top {
     text-align: center;
 }
