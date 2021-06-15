@@ -38,6 +38,9 @@ a {
     font-weight: bold;
     text-decoration: none;
 }
+.nav-item {
+    display: inline-block;
+}
 .nav-link:hover {
     color: var(--link-color);
 }
