@@ -5,3 +5,7 @@ body, html {
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
+
+.message-info {
+    background-color: #c3d5ff;
+}
