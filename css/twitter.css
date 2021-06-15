@@ -40,6 +40,10 @@ a {
     float: left;
     margin-top: 1.33em;
 }
+.media-body {
+    float: right;
+    width: calc(100% - 50px);
+}
 .top-nav {
     background: var(--light-bg);
     position: fixed;
