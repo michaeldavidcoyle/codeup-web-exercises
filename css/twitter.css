@@ -27,6 +27,8 @@ a {
 }
 .top-nav {
     background: var(--light-bg);
+    position: fixed;
+    width: 100%;
 }
 .nav {
     list-style-type: none;
