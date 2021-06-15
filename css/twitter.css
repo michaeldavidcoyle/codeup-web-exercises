@@ -29,6 +29,7 @@ a {
     background: var(--light-bg);
     position: fixed;
     width: 100%;
+    z-index: 1000;
 }
 .nav {
     list-style-type: none;
