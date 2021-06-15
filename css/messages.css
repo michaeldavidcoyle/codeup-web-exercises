@@ -15,16 +15,20 @@ body, html {
 
 .message-info {
     background-color: #c3d5ff;
+    color: #372c89;
 }
 
 .message-success {
     background-color: #bbe5c6;
+    color: #3f8556;
 }
 
 .message-warning {
     background-color: #fbfbbd;
+    color: #7a6b13;
 }
 
 .message-error {
     background-color: #f8c7cd;
+    color: #8a2e44;
 }
