@@ -17,3 +17,7 @@ body, html {
 .message-warning {
     background-color: #fbfbbd;
 }
+
+.message-error {
+    background-color: #f8c7cd;
+}
