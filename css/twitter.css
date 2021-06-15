@@ -25,6 +25,9 @@ header {
 a {
     color: var(--link-color);
 }
+.container {
+    margin: 2em;
+}
 .top-nav {
     background: var(--light-bg);
     position: fixed;
