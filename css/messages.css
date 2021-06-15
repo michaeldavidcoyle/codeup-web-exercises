@@ -9,10 +9,10 @@ body, html {
 .message {
     width: 95%;
     height: 1.4em;
-    margin: 10px auto;
+    margin: 0.5em auto;
     padding: 0.5em;
     border: 1px solid lightgray;
-    border-radius: 7px;
+    border-radius: 0.4em;
     line-height: 1.4em;
 }
 
