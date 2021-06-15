@@ -11,6 +11,8 @@ body, html {
     height: 2em;
     margin: 10px auto;
     padding: 0.5em;
+    border: 1px solid lightgray;
+    border-radius: 7px;
 }
 
 .message-info {
