@@ -13,3 +13,7 @@ body, html {
 .message-success {
     background-color: #bbe5c6;
 }
+
+.message-warning {
+    background-color: #fbfbbd;
+}
