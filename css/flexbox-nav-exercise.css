@@ -25,11 +25,13 @@ a:hover {
 
 .nav-left, .nav-right {
     display: inherit;
+    align-items: center;
 }
 
 .nav-items {
     font-family: 'Work Sans', sans-serif;
     font-weight: bold;
+    display: inherit;
 }
 
 .logo {
