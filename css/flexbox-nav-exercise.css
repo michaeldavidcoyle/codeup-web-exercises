@@ -11,3 +11,7 @@ nav {
 .nav-left, .nav-right {
     display: inherit;
 }
+
+.nav-items {
+    padding: 1em;
+}
