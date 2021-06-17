@@ -12,6 +12,10 @@ nav {
     justify-content: space-between;
 }
 
+a {
+    display: inline-block;
+}
+
 .nav-left, .nav-right {
     display: inherit;
 }
