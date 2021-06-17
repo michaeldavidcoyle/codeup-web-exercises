@@ -30,7 +30,9 @@ a {
     padding: 20px;
     border-radius: 4px;
     text-align: center;
-    /*  TODO: Change this flex items basis to 100% of the page  */
+    /*  Change this flex items basis to 100% of the page  */
+    flex-basis: 100%;
+
 }
 
 .card-title {
