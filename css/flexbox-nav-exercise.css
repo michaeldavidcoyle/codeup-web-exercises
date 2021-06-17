@@ -37,5 +37,6 @@ a:hover {
 .logo {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 3em;
+    padding: 0.2em 0;
 }
