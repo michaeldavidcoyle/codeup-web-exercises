@@ -41,7 +41,7 @@ h2, h3 {
 
 section {
     /* enter needed declarations here */
-    display: flex;
+    display: inherit;
 }
 
 section:nth-of-type(1) {
