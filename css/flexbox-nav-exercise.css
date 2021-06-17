@@ -16,6 +16,10 @@ a {
     display: inline-block;
 }
 
+a:hover {
+    color: blue;
+}
+
 .nav-left, .nav-right {
     display: inherit;
 }
