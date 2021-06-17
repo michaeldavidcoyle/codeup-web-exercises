@@ -39,6 +39,7 @@ h2, h3 {
 section {
     /* enter needed declarations here */
     display: flex;
+    margin: 0.9em;
 }
 
 section:nth-of-type(1) {
