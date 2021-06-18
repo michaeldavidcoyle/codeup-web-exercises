@@ -26,12 +26,19 @@ a:hover {
 .nav-left, .nav-right {
     display: inherit;
     align-items: center;
+    flex-basis: 315px;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .nav-items {
     font-family: 'Work Sans', sans-serif;
     font-weight: bold;
     display: inherit;
+    padding: 4px;
 }
 
 .logo {
