@@ -46,16 +46,16 @@
         <h2>Build your own pizza!</h2>
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" href="#"><span class="badge badge-pill badge-dark">1</span> Size and crust</a>
+                <a id="size-crust-tab"  class="nav-link active" href="#size-crust"><span class="badge badge-pill badge-dark">1</span> Size and crust</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><span class="badge badge-pill badge-dark">2</span> Cheese and Sauce</a>
+                <a id="cheese-sauce-tab" class="nav-link" href="#cheese-sauce"><span class="badge badge-pill badge-dark">2</span> Cheese and Sauce</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><span class="badge badge-pill badge-dark">3</span> Toppings</a>
+                <a id="toppings-tab" class="nav-link" href="#toppings"><span class="badge badge-pill badge-dark">3</span> Toppings</a>
             </li>
         </ul>
-        <div class="card">
+        <div id="size-crust" class="card">
             <div class="card-header bg-primary text-white">
                 Choose size and crust
             </div>
@@ -101,7 +101,7 @@
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div id="cheese-sauce" class="card">
             <div class="card-header bg-primary text-white">
                 Choose cheese and sauce
             </div>
@@ -154,6 +154,73 @@
                             <button class="btn bg-primary text-white">&lt; Previous Step</button>
                             <button class="btn bg-primary text-white">Next Step &gt;</button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="toppings" class="card">
+            <div class="card-header bg-primary text-white">
+                Choose toppings
+            </div>
+            <div class="card-body">
+                <div class="card">
+                    <div class="card-header">
+                        Choose meats
+                    </div>
+                    <div class="card-body">
+                        <form action="#">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input id="beef" type="checkbox" name="meat">
+                                    <label for="beef"> Beef</label>
+                                </li>
+                                <li class="list-group-item">
+                                    <input id="ham" type="checkbox" name="meat">
+                                    <label for="ham"> Ham</label>
+                                </li>
+                                <li class="list-group-item">
+                                    <input id="philly-steak" type="checkbox" name="meat">
+                                    <label for="philly-steak"> Philly Steak</label>
+                                </li>
+                                <li class="list-group-item">
+                                    <input id="bacon" type="checkbox" name="meat">
+                                    <label for="bacon"> Bacon</label>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Choose Non-Meats
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <input id="green-peppers" type="checkbox" name="non-meats">
+                                <label for="green-peppers"> Green Peppers</label>
+                            </li>
+                            <li class="list-group-item">
+                                <input id="mushrooms" type="checkbox" name="non-meats">
+                                <label for="mushrooms"> Mushrooms</label>
+                            </li>
+                        </ul>
+                        <li class="list-group-item">
+                            <input id="onions" type="checkbox" name="non-meats">
+                            <label for="onions"> Onions</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input id="jalepenos" type="checkbox" name="non-meats">
+                            <label for="jalepenos"> Jalepeños</label>
+                        </li>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn bg-primary text-white">
+                            Checkout
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
