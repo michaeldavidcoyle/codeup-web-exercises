@@ -6,3 +6,8 @@ body {
 h1 {
     font-family: 'Fira Sans Condensed', sans-serif;
 }
+
+div.row:nth-child(2) {
+    padding-bottom: 1em;
+    border-bottom: 0.25em solid darkorange;
+}
