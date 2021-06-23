@@ -1,6 +1,6 @@
 body {
     font-family: 'Raleway', sans-serif;
-    color: saddlebrown;
+    color: #663300;
 }
 
 h1 {
@@ -17,6 +17,6 @@ div.row {
 
 div.row:nth-child(2) {
     padding-bottom: 1em;
-    border-bottom: 0.25em solid #808040;
+    border-bottom: 0.25em solid goldenrod;
 }
 
