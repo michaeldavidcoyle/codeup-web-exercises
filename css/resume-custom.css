@@ -17,6 +17,6 @@ div.row {
 
 div.row:nth-child(2) {
     padding-bottom: 1em;
-    border-bottom: 0.25em solid darkslategray;
+    border-bottom: 0.25em solid #808040;
 }
 
