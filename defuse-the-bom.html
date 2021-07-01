@@ -31,10 +31,10 @@
         updateTimer();
     }, 1000);
 
-    // TODO: When this function runs, it needs to
+    // When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-
+        clearInterval(updateID);
     }
 
     // Don't modify anything below this line!
