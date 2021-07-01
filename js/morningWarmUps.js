@@ -16,3 +16,19 @@ function countSpaces(string) {
     return count;
 }
 
+// tests
+var string = ' ';
+console.log('tests for countSpaces function:');
+console.log('string: "' + string + '" has: ' + countSpaces(string) + ' spaces.');
+
+string = ' '.repeat(3);
+console.log('string: "' + string + '" has: ' + countSpaces(string) + ' spaces.');
+
+string = '. '.repeat(7);
+console.log('string: "' + string + '" has: ' + countSpaces(string) + ' spaces.');
+
+string = ' 1, 2, 3, 4';
+console.log('string: "' + string + '" has: ' + countSpaces(string) + ' spaces.');
+
+string = 'The quick brown fox jumps over the lazy dog.';
+console.log('string: "' + string + '" has: ' + countSpaces(string) + ' spaces.');
