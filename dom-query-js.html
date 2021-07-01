@@ -64,10 +64,12 @@
         // Set text color of li with dbid = 1 to blue
         listItems[dbidIndex].style.color = 'blue';
 
-        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+        // Uncomment the next line and get all elements with class name sub-paragraph
+        var subParagraphs = document.getElementsByClassName('sub-paragraph');
+        console.log(subParagraphs);
 
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        // Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs[0].innerText = 'Mission Accomplished!';
     })();
 </script>
 </body>
