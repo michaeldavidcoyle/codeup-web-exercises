@@ -40,7 +40,11 @@
         console.log(mainHeader);
 
         // Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerText = 'JavaScript is Cool';
+        function javaScriptCool() {
+            mainHeader.innerText = 'JavaScript is Cool';
+        }
+        var changeMain = document.getElementById('change-main');
+        changeMain.addEventListener('click', javaScriptCool);
 
         // Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
