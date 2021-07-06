@@ -103,9 +103,19 @@
 
         // just because ;)
         function changeFont() {
-            body.style.fontFamily = 'Helvetica, sans-serif'
+            var serif = '"Times New Roman", serif';
+            var sans = 'Helvetica, sans-serif';
+
+            if (toggled) {
+                body.style.fontFamily = serif;
+                toggled = false;
+            } else {
+                body.style.fontFamily = sans;
+                toggled = true;
+            }
         }
 
+        var toggled = false;
         var body = document.getElementsByTagName('body')[0];
         var changeBody = document.getElementById('change-body');
 
