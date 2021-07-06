@@ -106,16 +106,16 @@
             var serif = '"Times New Roman", serif';
             var sans = 'Helvetica, sans-serif';
 
-            if (toggled) {
+            if (fontIsToggled) {
                 body.style.fontFamily = serif;
-                toggled = false;
+                fontIsToggled = false;
             } else {
                 body.style.fontFamily = sans;
-                toggled = true;
+                fontIsToggled = true;
             }
         }
 
-        var toggled = false;
+        var fontIsToggled = false;
         var body = document.getElementsByTagName('body')[0];
         var changeBody = document.getElementById('change-body');
 
