@@ -19,7 +19,7 @@
 <button id="change-list">Change list</button>
 
 <h2 id="sub-header">Hello Again.</h2>
-<button id="change-sub">Change heading</button>
+<button id="change-sub">Change color</button>
 
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -61,12 +61,19 @@
         console.log(subHeader);
 
         // Set the text color of subHeader to blue
-        function makeSubHeaderBlue() {
-            subHeader.style.color = 'blue';
+        function changeSubHeaderColor() {
+            if (subIsToggled) {
+                subHeader.style.color = 'black';
+                subIsToggled = false;
+            } else {
+                subHeader.style.color = 'blue';
+                subIsToggled = true;
+            }
         }
 
+        var subIsToggled = false;
         var changeSub = document.getElementById('change-sub');
-        changeSub.addEventListener('click', makeSubHeaderBlue);
+        changeSub.addEventListener('click', changeSubHeaderColor);
 
         // Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
