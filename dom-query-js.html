@@ -31,6 +31,8 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 <button id="change-p">Change paragraph</button>
+<br>
+<button id="change-body">Change Page Font</button>
 
 <script>
     (function() {
@@ -100,8 +102,14 @@
         changeP.addEventListener('click', missionAccomplished);
 
         // just because ;)
+        function changeFont() {
+            body.style.fontFamily = 'Helvetica, sans-serif'
+        }
+
         var body = document.getElementsByTagName('body')[0];
-        body.style.fontFamily = 'Helvetica, sans-serif';
+        var changeBody = document.getElementById('change-body');
+
+        changeBody.addEventListener('click', changeFont)
     })();
 </script>
 </body>
