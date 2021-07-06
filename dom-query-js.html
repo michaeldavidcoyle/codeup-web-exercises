@@ -91,7 +91,13 @@
         console.log(subParagraphs);
 
         // Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = 'Mission Accomplished!';
+        function missionAccomplished() {
+            subParagraphs[0].innerText = 'Mission Accomplished!';
+        }
+
+        var changeP = document.getElementById('change-p');
+
+        changeP.addEventListener('click', missionAccomplished);
 
         // just because ;)
         var body = document.getElementsByTagName('body')[0];
