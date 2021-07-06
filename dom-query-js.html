@@ -51,7 +51,12 @@
         console.log(subHeader);
 
         // Set the text color of subHeader to blue
-        subHeader.style.color = 'blue';
+        function makeSubHeaderBlue() {
+            subHeader.style.color = 'blue';
+        }
+
+        var changeSub = document.getElementById('change-sub');
+        changeSub.addEventListener('click', makeSubHeaderBlue);
 
         // Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
