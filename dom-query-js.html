@@ -60,25 +60,31 @@
 
         // Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
+        var changeList = document.getElementById('change-list');
         console.log(listItems);
 
-        // Set text color on every other list item to grey
-        var dbid,
-            dbidIndex;
-        for (var index = 0; index < listItems.length; index++) {
-            dbid = listItems[index].getAttribute('data-dbid');
+        function styleList() {
+            // Set text color on every other list item to grey
+            var dbid,
+                dbidIndex;
+            for (var index = 0; index < listItems.length; index++) {
+                dbid = listItems[index].getAttribute('data-dbid');
 
-            if (index % 2 !== 0) {
-                listItems[index].style.color = 'gray';
+                if (index % 2 !== 0) {
+                    listItems[index].style.color = 'gray';
+                }
+
+                if (dbid == 1) {
+                    dbidIndex = index;
+                }
             }
 
-            if (dbid == 1) {
-                dbidIndex = index;
-            }
+            // Set text color of li with dbid = 1 to blue
+            listItems[dbidIndex].style.color = 'blue';
         }
 
-        // Set text color of li with dbid = 1 to blue
-        listItems[dbidIndex].style.color = 'blue';
+        changeList.addEventListener('click', styleList);
+
 
         // Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
