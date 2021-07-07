@@ -96,11 +96,21 @@ var personTwo = {
 }
 console.log('nicely formatted full name: ' + personTwo.getNicelyFormattedFullName());
 
-// TODO: Create a method on the object below that gives us the behavior that the example implies.
+// Create a method on the object below that gives us the behavior that the example implies.
 // Example: personThree.intro() ---- returns ----> "Hello, My name is Arlene Martinez and I am 25 years old"
 var personThree = {
     firstName: "arlene",
     lastName: "martinez",
     ageInYears: 25,
-    heightInInches: 62
+    heightInInches: 62,
+    getNicelyFormattedFullName: function() {
+        var first = this.firstName[0].toUpperCase() + this.firstName.slice(1),
+            last = this.lastName[0].toUpperCase() + this.lastName.slice(1);
+        return first + ' ' + last;
+    },
+    intro: function() {
+        return 'Hello, my name is ' + this.getNicelyFormattedFullName() + ' and I am ' + this.ageInYears + ' years old'
+    }
 }
+
+console.log(personThree.intro());
