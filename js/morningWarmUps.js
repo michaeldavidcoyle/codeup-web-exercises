@@ -80,15 +80,22 @@ var personOne = {
 }
 console.log('personOne full name: ' + personOne.getFullName());
 
-// TODO: Create a method on the object down below named getNicelyFormattedFullName that when called returns the
+// Create a method on the object down below named getNicelyFormattedFullName that when called returns the
 //  users full name with both first letters in the names being capitalized look at example down below for more reference.
 // Example: personOne.getNicelyFormattedFullName() ---- returns ----> "Dan Valdarez"
 var personTwo = {
     firstName: "dan",
     lastName: "valdarez",
     ageInYears: 61,
-    heightInInches: 73
+    heightInInches: 73,
+    getNicelyFormattedFullName: function() {
+        var first = this.firstName[0].toUpperCase() + this.firstName.slice(1),
+            last = this.lastName[0].toUpperCase() + this.lastName.slice(1);
+        return first + ' ' + last;
+    }
 }
+console.log('nicely formatted full name: ' + personTwo.getNicelyFormattedFullName());
+
 // TODO: Create a method on the object below that gives us the behavior that the example implies.
 // Example: personThree.intro() ---- returns ----> "Hello, My name is Arlene Martinez and I am 25 years old"
 var personThree = {
