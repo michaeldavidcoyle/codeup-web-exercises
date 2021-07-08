@@ -132,7 +132,7 @@ console.log(personThree.intro());
 //                    { "originalString":"dave", lengthOfOriginalString:4 }
 //                  ]
 //          returns: "hello dave"
-// TODO: Create a function named getTallUsers that accepts an array of objects. The objects in the array will be in the same format
+// Create a function named getTallUsers that accepts an array of objects. The objects in the array will be in the same format
 //  as PersonOne, PersonTwo, and PersonThree. The functions job is to return an array of users that have heightInInches equal to or greater than 65.
 var people = [personOne,personTwo,personThree];
 // Example: getTallUsers(people)
@@ -171,3 +171,18 @@ function concatFromObjects(objectsArray) {
 
 console.log('\nTest of function concatFromObjects: ');
 console.log(concatFromObjects(stringsToObjects(['hello', 'dave'])));
+
+function getTallUsers(peopleArray) {
+    var tallUsers = [];
+
+    for (var index = 0; index < peopleArray.length; index++) {
+        if (peopleArray[index].heightInInches >= 65) {
+            tallUsers.push(peopleArray[index]);
+        }
+    }
+
+    return tallUsers;
+}
+
+console.log('\nTest of function getTallUsers: ');
+console.log(getTallUsers(people));
