@@ -125,7 +125,7 @@ console.log(personThree.intro());
 //                    { "originalString":"dave", lengthOfOriginalString:4 }
 //                   ]
 // Part 2
-// TODO: Create a function that takes the array of objects from PART 1
+// Create a function that takes the array of objects from PART 1
 //  and returns a string of all of the originalStrings concatenated with spaces in between
 // Example: input: [
 //                    { "originalString":"hello", lengthOfOriginalString:5 },
@@ -156,4 +156,18 @@ function stringsToObjects(stringsArray) {
     return objectsArray;
 }
 
+console.log('\nTest of function stringsToObjects: ')
 console.log(stringsToObjects(["hello", "dave"]));
+
+function concatFromObjects(objectsArray) {
+    var stringsArray = [];
+
+    for (var index = 0; index < objectsArray.length; index++) {
+        stringsArray.push(objectsArray[index].originalString);
+    }
+
+    return stringsArray.join(' ');
+}
+
+console.log('\nTest of function concatFromObjects: ');
+console.log(concatFromObjects(stringsToObjects(['hello', 'dave'])));
