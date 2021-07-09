@@ -16,4 +16,6 @@ $(document).ready(function() {
     $('h1').css('background-color', 'ivory');
     $('p').css('background-color', 'yellow');
     $('li').css('background-color', 'yellowgreen');
+
+    alert($('h1').html());
 });
