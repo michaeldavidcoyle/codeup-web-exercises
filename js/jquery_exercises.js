@@ -6,5 +6,7 @@ $(document).ready(function() {
     // alert( $('#pop').html() );
     // alert( $('#list-no-style').html() );
 
-    $('.codeup').css('border', '1px solid red');
+    // $('.codeup').css('border', '1px solid red');
+
+    $('li').css('font-size', '20px');
 });
