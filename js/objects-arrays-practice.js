@@ -294,3 +294,17 @@ isZero: true
 }
 ```
 */
+
+function numberInfo(number) {
+    return {
+        isPositive: number > 0,
+        isEven: number % 2 === 0,
+        isZero: number === 0
+    }
+}
+
+console.log('-'.repeat(20));
+console.log('tests for numberInfo: ');
+console.log(numberInfo(-1)); // Should return: {isPositive: false, isEven: false, isZero: false}
+console.log(numberInfo(6)); // Should return: {isPositive: true, isEven: true, isZero: false}
+console.log(numberInfo(0)); // Should return: {isPositive: false, isEven: true, isZero: true}
