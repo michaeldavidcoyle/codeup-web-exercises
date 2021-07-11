@@ -250,6 +250,20 @@ reverseString("2016-02-13");
 "31-21-6102"
 ```
 */
+function reverseString(string) {
+    return string.split('').reverse().join('');
+}
+
+console.log('-'.repeat(20));
+console.log('tests for reverseString: ');
+console.log(reverseString("squid"));
+// Should return "diuqs"
+
+console.log(reverseString("tilda"));
+// Should return "adlit"
+
+console.log(reverseString("2016-02-13"));
+// Should return "31-21-6102"
 
 /*
 7. Create a function called `numberInfo` that accepts a number and returns an object with the properties isPositive, isEven, isZero. The properties should either be true or false based on if the parameter meets the criteria.
