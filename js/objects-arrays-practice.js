@@ -212,6 +212,26 @@ dateStringToObject("1994-12-21");
 {month: 12, day: 21, year: 1994}
 ```
 */
+function dateStringToObject(dateString) {
+    var dateInfo = dateString.split('-');
+
+    return {
+        month: dateInfo[1],
+        day: dateInfo[2],
+        year: dateInfo[0]
+    }
+}
+
+console.log('-'.repeat(20));
+console.log('tests for dateStringToObject');
+console.log(dateStringToObject("2016-2-13"));
+// Should return {month: 2, day: 13, year: 2016}
+
+console.log(dateStringToObject("2005-11-29"));
+// Should return {month: 11, day: 29, year: 2005}
+
+console.log(dateStringToObject("1994-12-21"));
+// Should return {month: 12, day: 21, year: 1994}
 
 /*
 6. Create a function called `reverseString` that that accepts a string and returns a string with the characters in reverse order.
