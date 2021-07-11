@@ -54,6 +54,19 @@ max([54.5,2,34,-93]);
 54.5
 ```
 */
+function max(numbersArray) {
+    var greatest = numbersArray[0];
+
+    for (var i = 1; i < numbersArray.length; i++) {
+        if (numbersArray[i] > greatest) greatest = numbersArray[i];
+    }
+
+    return greatest;
+}
+
+console.log(max([4,34,193,2,345,46,0])); // Should return 345
+console.log(max([-34,83,21,38,-2039,3.2])); // Should return 83
+console.log(max([54.5,2,34,-93])); // Should return 54.5
 
 /*
 3. Create a function called `mostOccuringNumber` that accepts an array of numbers and returns the number that occurs the most within that array.
