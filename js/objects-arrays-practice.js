@@ -21,6 +21,21 @@ removeDuplicates(["2016-02-13","1994-12-21","2016-02-13","2016-02-13","2005-11-2
 ["1994-12-21","2016-02-13","2005-11-29"]
 ```
 */
+function removeDuplicates(stringsArray) {
+    var uniqueStringsArray = [];
+
+    for (var index = 0; index < stringsArray.length; index++) {
+        if (!uniqueStringsArray.includes(stringsArray[index])) {
+            uniqueStringsArray.push(stringsArray[index]);
+        }
+    }
+
+    return uniqueStringsArray;
+}
+
+console.log(removeDuplicates(["bob", "squid", "samantha", "bob"]));
+console.log(removeDuplicates(["tilda", "tilda"]));
+console.log(removeDuplicates(["2016-02-13", "1994-12-21", "2016-02-13", "2016-02-13", "2005-11-29"]));
 
 /*
 2. Create a function called `max` that accepts an array of numbers and returns the largest number from that array.
