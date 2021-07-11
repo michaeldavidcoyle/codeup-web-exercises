@@ -113,38 +113,38 @@ console.log(mostOccuringNumber([73.5,8,0,-3,3.50,8.25,3.50])); // Should return 
 /*
 4. Create a function called `whoIsPassing` that accepts an array of objects, where each object is a student's name and class average (from 0 to 100). Your function will return an array of objects where each object is a student's name and whether he/she is passing. Note that a class average of 60 and higher is passing.
     ### Examples
-    ```js
+*/
 var students = [
-{
-name: "Phill Rundy",
-classAverage: 53
-},
-{
-name: "Samuel Moore",
-classAverage: 71
-},
-{
-name: "Mark Tendly",
-classAverage: 84
-},
-{
-name: "Dough Mosh",
-classAverage: 87
-},
-{
-name: "Bran Thomb",
-classAverage: 93
-},
-{
-name: "Mario Yushi",
-classAverage: 82
-},
-{
-name: "Nathan Skywalker",
-classAverage: 52
-}
-]
-
+    {
+    name: "Phill Rundy",
+    classAverage: 53
+    },
+    {
+    name: "Samuel Moore",
+    classAverage: 71
+    },
+    {
+    name: "Mark Tendly",
+    classAverage: 84
+    },
+    {
+    name: "Dough Mosh",
+    classAverage: 87
+    },
+    {
+    name: "Bran Thomb",
+    classAverage: 93
+    },
+    {
+    name: "Mario Yushi",
+    classAverage: 82
+    },
+    {
+    name: "Nathan Skywalker",
+    classAverage: 52
+    }
+];
+/*
 whoIsPassing(students);
 // Should return the following
 [
@@ -179,6 +179,21 @@ passing: false
 ]
 ```
 */
+function whoIsPassing(studentsArray) {
+    var studentReports = [];
+
+    studentsArray.forEach(function(student) {
+       studentReports.push(
+           {name: student.name, passing: student.classAverage >= 60}
+       );
+    });
+
+    return studentReports;
+}
+
+console.log('-'.repeat(20));
+console.log('tests for whoIsPassing');
+console.log(whoIsPassing(students));
 
 /*
 5. Create a function called `dateStringToObject` that accepts a date in the following string format "YYYY-MM-DD" and returns an object that contains month, day, and year properties.
