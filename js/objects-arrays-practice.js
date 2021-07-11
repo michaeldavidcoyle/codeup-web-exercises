@@ -93,15 +93,15 @@ function mostOccuringNumber(numbersArray) {
     var occurances = [];
 
     numbersArray.forEach(function (number) {
-        if (!numbers.includes(number)) {
-            numbers.push(number);
-            occurances.push(1);
+        if (!numbers.includes(number)) { // any number in numbersArray should only be pushed to numbers once
+            numbers.push(number); // add the number
+            occurances.push(1); // start the count
         } else {
-            occurances[numbers.indexOf(number)]++;
+            occurances[numbers.indexOf(number)]++; // add one to the count at the same index as the number
         }
     });
 
-    return numbers[ occurances.indexOf(max(occurances)) ];
+    return numbers[ occurances.indexOf(max(occurances)) ]; // reuse max function :)
 }
 
 console.log('-'.repeat(20));
