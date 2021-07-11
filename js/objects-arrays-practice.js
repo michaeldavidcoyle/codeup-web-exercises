@@ -33,6 +33,7 @@ function removeDuplicates(stringsArray) {
     return uniqueStringsArray;
 }
 
+console.log('tests for removeDuplictes: ');
 console.log(removeDuplicates(["bob", "squid", "samantha", "bob"]));
 console.log(removeDuplicates(["tilda", "tilda"]));
 console.log(removeDuplicates(["2016-02-13", "1994-12-21", "2016-02-13", "2016-02-13", "2005-11-29"]));
@@ -64,6 +65,8 @@ function max(numbersArray) {
     return greatest;
 }
 
+console.log('-'.repeat(20));
+console.log('tests for max: ')
 console.log(max([4,34,193,2,345,46,0])); // Should return 345
 console.log(max([-34,83,21,38,-2039,3.2])); // Should return 83
 console.log(max([54.5,2,34,-93])); // Should return 54.5
@@ -85,6 +88,27 @@ mostOccuringNumber([73.5,8,0,-3,3.50,8.25,3.50]);
 3.5
 ```
 */
+function mostOccuringNumber(numbersArray) {
+    var numbers = [];
+    var occurances = [];
+
+    numbersArray.forEach(function (number) {
+        if (!numbers.includes(number)) {
+            numbers.push(number);
+            occurances.push(1);
+        } else {
+            occurances[numbers.indexOf(number)]++;
+        }
+    });
+
+    return numbers[ occurances.indexOf(max(occurances)) ];
+}
+
+console.log('-'.repeat(20));
+console.log('tests for mostOccuringNumber');
+console.log(mostOccuringNumber([8,93,28,8,27,-62,32,8,-62])); // Should return 8
+console.log(mostOccuringNumber([8,93,-62.0,28,27,-62,32,8,-62])); // Should return -62
+console.log(mostOccuringNumber([73.5,8,0,-3,3.50,8.25,3.50])); // Should return 3.5
 
 /*
 4. Create a function called `whoIsPassing` that accepts an array of objects, where each object is a student's name and class average (from 0 to 100). Your function will return an array of objects where each object is a student's name and whether he/she is passing. Note that a class average of 60 and higher is passing.
