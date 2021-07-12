@@ -1,6 +1,9 @@
 "use strict";
 
 $(document).ready(function() {
+    var all_h1 = $('h1');
+    var all_li = $('li');
+    var all_p = $('p');
     // alert('The DOM has finished loading.');
 
     // alert( $('#pop').html() );
@@ -8,13 +11,13 @@ $(document).ready(function() {
 
     // $('.codeup').css('border', '1px solid red');
 
-    $('li').css('font-size', '20px');
+    all_li.css('font-size', '20px');
 
-    $('h1').css('background-color', 'ivory');
-    $('p').css('background-color', 'yellow');
-    $('li').css('background-color', 'yellowgreen');
+    all_h1.css('background-color', 'ivory');
+    all_p.css('background-color', 'yellow');
+    all_li.css('background-color', 'yellowgreen');
 
-    alert($('h1').html());
+    alert(all_h1.html());
 
     $('h1, p, li').css('background-color', 'yellowgreen');
 });
