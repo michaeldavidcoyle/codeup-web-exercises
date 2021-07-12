@@ -6,20 +6,36 @@
 <body>
 <h1>Konami Code</h1>
 <h2>&uarr; &uarr; &darr; &darr; &larr; &rarr; &larr; &rarr; b a Enter</h2>
+<p id="success"></p>
 <script src="js/jquery.js"></script>
 <script>
     "use strict";
     const konamiCode = [
         'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'
     ];
-    var keySequence = [];
+    var keySequence = [],
+        livesCount = 0;
 
-    $(document).keyup(function(event) {
+    $(document).keydown(function(event) {
         keySequence.push(event.key);
         console.log(event.key);
-        if (keySequence.length === konamiCode.length) {
+        if (keySequence.length >= konamiCode.length) {
             if (keySequence.join('') === konamiCode.join('')) {
-                $('body').css('background-color', 'blue');
+                $('body').css({
+                    'background-color': 'blue',
+                    'color': 'white'
+                });
+                $('#success').html('You have added ' + (++livesCount * 30) + ' lives!');
+                setTimeout(function() {
+                    $('body').css({
+                        'background-color': 'white',
+                        'color': 'black'
+                    });
+
+                    keySequence = [];
+                }, 1000);
+            } else {
+                keySequence = [];
             }
         }
     });
