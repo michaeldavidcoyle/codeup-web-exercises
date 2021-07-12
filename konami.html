@@ -19,24 +19,22 @@
     $(document).keydown(function(event) {
         keySequence.push(event.key);
         console.log(event.key);
-        if (keySequence.length >= konamiCode.length) {
-            if (keySequence.join('') === konamiCode.join('')) {
-                $('body').css({
-                    'background-color': 'blue',
-                    'color': 'white'
-                });
-                $('#success').html('You have added ' + (++livesCount * 30) + ' lives!');
-                setTimeout(function() {
-                    $('body').css({
-                        'background-color': 'white',
-                        'color': 'black'
-                    });
+        if (keySequence.join('').includes(konamiCode.join(''))) {
+            keySequence = [];
 
-                    keySequence = [];
-                }, 1000);
-            } else {
-                keySequence = [];
-            }
+            $('body').css({
+                'background-color': 'blue',
+                'color': 'white'
+            });
+            $('#success').html('You have added ' + (++livesCount * 30) + ' lives!');
+
+            setTimeout(function() {
+                $('body').css({
+                    'background-color': 'white',
+                    'color': 'black'
+                });
+
+            }, 1000);
         }
     });
 </script>
