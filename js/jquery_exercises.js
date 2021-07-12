@@ -30,4 +30,12 @@ $(document).ready(function() {
     all_p.dblclick(function() {
         $(this).css('font-size', '18px');
     });
+
+    // Set all li text color to red when the mouse is hovering;
+    // reset to black when it is not
+    all_li.hover(function() {
+        $(this).css('color', 'red');
+    }, function() {
+        $(this).css('color', 'black');
+    });
 });
