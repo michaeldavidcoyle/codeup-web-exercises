@@ -14,7 +14,8 @@
         'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'
     ];
     var keySequence = [],
-        livesCount = 0;
+        livesCount = 0,
+        success = $('#success');
 
     $(document).keydown(function(event) {
         keySequence.push(event.key);
@@ -22,18 +23,25 @@
         if (keySequence.join('').includes(konamiCode.join(''))) {
             keySequence = [];
 
+            var fontSize = parseFloat(success.css('font-size'));
+
             $('body').css({
                 'background-color': 'blue',
                 'color': 'white'
             });
-            $('#success').html('You have added ' + (++livesCount * 30) + ' lives!');
+
+            success.html('You have added ' + (++livesCount * 30) + ' lives!');
+
+            if (fontSize < 80) {
+                fontSize = Math.round(fontSize * 1.25);
+                success.css('font-size', fontSize + 'px');
+            }
 
             setTimeout(function() {
                 $('body').css({
                     'background-color': 'white',
                     'color': 'black'
                 });
-
             }, 1000);
         }
     });
