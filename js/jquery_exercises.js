@@ -11,13 +11,18 @@ $(document).ready(function() {
 
     // $('.codeup').css('border', '1px solid red');
 
-    all_li.css('font-size', '20px');
+    // all_li.css('font-size', '20px');
+    //
+    // all_h1.css('background-color', 'ivory');
+    // all_p.css('background-color', 'yellow');
+    // all_li.css('background-color', 'yellowgreen');
+    //
+    // alert(all_h1.html());
+    //
+    // $('h1, p, li').css('background-color', 'yellowgreen');
 
-    all_h1.css('background-color', 'ivory');
-    all_p.css('background-color', 'yellow');
-    all_li.css('background-color', 'yellowgreen');
-
-    alert(all_h1.html());
-
-    $('h1, p, li').css('background-color', 'yellowgreen');
+    // Change the background color of an h1 element when clicked
+    all_h1.click(function() {
+        $(this).css('background-color', 'white');
+    });
 });
