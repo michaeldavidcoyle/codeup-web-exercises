@@ -25,4 +25,9 @@ $(document).ready(function() {
     all_h1.click(function() {
         $(this).css('background-color', 'white');
     });
+
+    // Make all paragraphs' font size 18px when double clicked
+    all_p.dblclick(function() {
+        $(this).css('font-size', '18px');
+    });
 });
