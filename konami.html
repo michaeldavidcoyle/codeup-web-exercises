@@ -33,7 +33,7 @@
         if (keySequence.join('').includes(konamiCode.join(''))) {
             keySequence = [];
 
-            $('img').removeAttr('hidden');
+            $('img').show();
             audio.play();
 
             var fontSize = parseFloat(success.css('font-size'));
