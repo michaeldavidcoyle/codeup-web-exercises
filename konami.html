@@ -15,13 +15,16 @@
     ];
     var keySequence = [],
         livesCount = 0,
-        success = $('#success');
+        success = $('#success'),
+        audio = new Audio('smb_1-up.wav');
 
     $(document).keydown(function(event) {
         keySequence.push(event.key);
         console.log(event.key);
         if (keySequence.join('').includes(konamiCode.join(''))) {
             keySequence = [];
+
+            audio.play();
 
             var fontSize = parseFloat(success.css('font-size'));
 
