@@ -8,6 +8,14 @@ dt {
     margin: 0.5em;
 }
 
+button {
+    padding: 1em 2em;
+    color: white;
+    background-color: #7b3200;
+    border: none;
+    border-radius: 0.5em;
+}
+
 .invisible {
     /*visibility: hidden;*/
     display: none;
@@ -25,7 +33,7 @@ dt {
 }
 
 .wall {
-    margin: 1em 0;
+    margin: 2em 0 4em 0;
     display: flex;
     justify-content: space-evenly;
 }
