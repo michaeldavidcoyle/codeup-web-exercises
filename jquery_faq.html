@@ -151,6 +151,7 @@
             measured skies in the lower 48 states, and star gazing here is obviously superb.
         </li>
     </ul>
+    <button id="highlight-last-li" type="button">Highlight Last List Items</button>
 <!--</div>-->
 
 <script src="js/jquery.js"></script>
@@ -172,6 +173,12 @@
             $(this).toggleClass('highlight');
             // $(event.target.nextElementSibling).slideToggle('fast');
             $(this).next().slideToggle('fast');
+        });
+
+        $('#highlight-last-li').click(function(event) {
+            $('ul').each(function() {
+                $(this).children().last().css('background-color', 'yellow');
+            });
         });
     });
 </script>
