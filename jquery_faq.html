@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-<div>
+<!--<div>-->
     <h1>National Parks: Frequently Asked Questions</h1>
     <dl>
         <dt>What government agency oversees the National Park Service?</dt>
@@ -83,16 +83,21 @@
             offered at a specific park, please see the park search.
         </dd>
     </dl>
-</div>
+<!--</div>-->
 
 <script src="js/jquery.js"></script>
 <script>
     $(document).ready(function() {
-        var divHTML = $('div').html();
+        // var divHTML = $('div').html();
+        //
+        // $('div').html(divHTML + '<a href="#">toggle answers</a>');
+        // $('a').click(function() {
+        //     $('dd').toggleClass('invisible');
+        // });
 
-        $('div').html(divHTML + '<a href="#">toggle answers</a>');
-        $('a').click(function() {
-            $('dd').toggleClass('invisible');
+        $('dt').click(function(event) {
+            console.log(event);
+            $(event.target.nextElementSibling).toggleClass('invisible');
         });
     });
 </script>
