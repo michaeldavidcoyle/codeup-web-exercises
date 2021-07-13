@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>JQuery FAQ</title>
     <style>
+        body {
+            font-family: Avenir, sans-serif;
+        }
         dt {
             padding: 0.5em;
             margin: 0.5em;
@@ -106,7 +109,7 @@
         $('dt').click(function(event) {
             console.log(event);
             $(this).toggleClass('highlight');
-            $(event.target.nextElementSibling).toggleClass('invisible');
+            $(event.target.nextElementSibling).slideToggle('fast');
         });
     });
 </script>
