@@ -1,0 +1,37 @@
+body {
+    font-family: Avenir, sans-serif;
+    color: #7b3200;
+}
+
+dt {
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+.invisible {
+    /*visibility: hidden;*/
+    display: none;
+}
+
+.highlight {
+    background-color: yellowgreen;
+}
+
+.picture-frame {
+    height: 240px;
+    width: 320px;
+    border: 2em solid #7b3200;
+    position: relative;
+}
+
+.wall {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.swap-img {
+    position: absolute;
+    top: 280px;
+    left: 110px;
+}

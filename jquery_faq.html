@@ -3,39 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>JQuery FAQ</title>
-    <style>
-        body {
-            font-family: Avenir, sans-serif;
-            color: #7b3200;
-        }
-        dt {
-            padding: 0.5em;
-            margin: 0.5em;
-        }
-        .invisible {
-            /*visibility: hidden;*/
-            display: none;
-        }
-        .highlight {
-            background-color: yellowgreen;
-        }
-        .picture-frame {
-            height: 240px;
-            width: 320px;
-            border: 2em solid #7b3200;
-            position: relative;
-        }
-        .wall {
-            margin-top: 1em;
-            display: flex;
-            justify-content: space-evenly;
-        }
-        .swap-img {
-            position: absolute;
-            top: 280px;
-            left: 110px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/jquery_faq.css">
 </head>
 <body>
 <!--<div>-->
@@ -186,40 +154,6 @@
 <!--</div>-->
 
 <script src="js/jquery.js"></script>
-<script>
-    $(document).ready(function() {
-        // creating link that toggles answers
-        // var divHTML = $('div').html();
-        //
-        // $('div').html(divHTML + '<a href="#">toggle answers</a>');
-        // $('a').click(function() {
-        //     $('dd').toggleClass('invisible');
-        // });
-
-        // listening for click on each dt to reveal its corresponding answer
-        $('dd').addClass('invisible');
-
-        $('dt').click(function(event) {
-            console.log(event);
-            $(this).toggleClass('highlight');
-            // $(event.target.nextElementSibling).slideToggle('fast');
-            $(this).next().slideToggle('fast');
-        });
-
-        $('#highlight-last-li').click(function(event) {
-            $('ul').each(function() {
-                $(this).children().last().css('background-color', 'yellow');
-            });
-        });
-
-        $('h3').click(function() {
-            $(this).next().css('font-weight', 'bold');
-        });
-
-        $('li').click(function() {
-            $(this).parent().children().first().css('color', 'blue');
-        });
-    });
-</script>
+<script src="js/jquery_faq.js"></script>
 </body>
 </html>
