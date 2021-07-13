@@ -28,10 +28,12 @@
         .wall {
             margin-top: 1em;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
         }
         .swap-img {
             position: absolute;
+            top: 280px;
+            left: 110px;
         }
     </style>
 </head>
@@ -170,15 +172,15 @@
     <div class="wall">
         <div id="frame-left" class="picture-frame">
             <img id="big-bend" src="img/big-bend.jpeg" alt="Big Bend National Park">
-            <button class="swap-img" type="button">Swap Images</button>
+            <button id="swap-btn-1" class="swap-img" type="button">Swap Image</button>
         </div>
         <div id="frame-center" class="picture-frame">
             <img id="kings" src="img/kings-canyon.jpeg" alt="Kings Canyon National Park">
-            <button class="swap-img" type="button">Swap Images</button>
+            <button id="swap-btn-2" class="swap-img" type="button">Swap Image</button>
         </div>
         <div id="frame-right" class="picture-frame">
             <img id="gen-sherman" src="img/general-sherman-tree.jpg" alt="General Sherman Tree">
-            <button class="swap-img" type="button">Swap Images</button>
+            <button id="swap-btn-3" class="swap-img" type="button">Swap Image</button>
         </div>
     </div>
 <!--</div>-->
