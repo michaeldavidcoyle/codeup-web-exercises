@@ -114,7 +114,8 @@
         $('dt').click(function(event) {
             console.log(event);
             $(this).toggleClass('highlight');
-            $(event.target.nextElementSibling).slideToggle('fast');
+            // $(event.target.nextElementSibling).slideToggle('fast');
+            $(this).next().slideToggle('fast');
         });
     });
 </script>
