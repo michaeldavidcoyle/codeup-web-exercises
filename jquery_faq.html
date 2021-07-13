@@ -11,6 +11,9 @@
         .invisible {
             visibility: hidden;
         }
+        .highlight {
+            background-color: burlywood;
+        }
     </style>
 </head>
 <body>
@@ -101,6 +104,7 @@
 
         $('dt').click(function(event) {
             console.log(event);
+            $(this).toggleClass('highlight');
             $(event.target.nextElementSibling).toggleClass('invisible');
         });
     });
