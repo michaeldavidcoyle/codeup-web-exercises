@@ -19,6 +19,16 @@
         .highlight {
             background-color: yellowgreen;
         }
+        .picture-frame {
+            height: 240px;
+            width: 320px;
+            border: 2em solid saddlebrown;
+        }
+        .wall {
+            margin-top: 1em;
+            display: flex;
+            justify-content: space-around;
+        }
     </style>
 </head>
 <body>
@@ -153,9 +163,11 @@
     </ul>
     <button id="highlight-last-li" type="button">Highlight Last List Items</button>
 
-    <div class="picture-frame"></div>
-    <div class="picture-frame"></div>
-    <div class="picture-frame"></div>
+    <div class="wall">
+        <div class="picture-frame"></div>
+        <div class="picture-frame"></div>
+        <div class="picture-frame"></div>
+    </div>
 <!--</div>-->
 
 <script src="js/jquery.js"></script>
