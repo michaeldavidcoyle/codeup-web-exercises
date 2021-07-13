@@ -10,6 +10,14 @@ $(document).ready(function() {
     // });
 
     // listening for click on each dt to reveal its corresponding answer
+    var imgLeft = $('#img-left');
+    var imgCenter = $('#img-center');
+    var imgRight = $('#img-right');
+
+    var bigBendImg = 'img/big-bend.jpeg';
+    var kingsImg = 'img/kings-canyon.jpeg';
+    var genShermanImg = 'img/general-sherman-tree.jpg';
+
     $('dd').addClass('invisible');
 
     $('dt').click(function(event) {
@@ -31,5 +39,13 @@ $(document).ready(function() {
 
     $('li').click(function() {
         $(this).parent().children().first().css('color', 'blue');
+    });
+
+    $('#swap-btn-1').click(function() {
+        var left = imgLeft.attr('src');
+        var center = imgCenter.attr('src');
+
+        imgLeft.attr('src', center);
+        imgCenter.attr('src', left);
     });
 });
