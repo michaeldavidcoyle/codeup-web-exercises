@@ -58,4 +58,12 @@ $(document).ready(function() {
         imgCenter.attr('src', randomSrc);
         random.attr('src', center);
     });
+
+    $('#swap-btn-3').click(function() {
+        var right = imgRight.attr('src');
+        var center = imgCenter.attr('src');
+
+        imgRight.attr('src', center);
+        imgCenter.attr('src', right);
+    });
 });
