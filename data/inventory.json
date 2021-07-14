@@ -30,5 +30,55 @@
             "tool"
         ],
         "price": 10
+    }, {
+        "title": "Tape measures",
+        "quantity": 12,
+        "categories": [
+            "tool"
+        ],
+        "price": 10
+    }, {
+        "title": "Levels",
+        "quantity": 15,
+        "categories": [
+            "tool"
+        ],
+        "price": 12
+    }, {
+        "title": "Saws",
+        "quantity": 17,
+        "categories": [
+            "tool"
+        ],
+        "price": 10
+    }, {
+        "title": "Circular Saws",
+        "quantity": 8,
+        "categories": [
+            "tool",
+            "powered"
+        ],
+        "price": 60
+    }, {
+        "title": "Pliers",
+        "quantity": 14,
+        "categories": [
+            "tool"
+        ],
+        "price": 7
+    }, {
+        "title": "Clamps",
+        "quantity": 34,
+        "categories": [
+            "tool"
+        ],
+        "price": 10
+    }, {
+        "title": "Wire cutters",
+        "quantity": 20,
+        "categories": [
+            "tool"
+        ],
+        "price": 8
     }
 ]
