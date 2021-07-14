@@ -7,11 +7,15 @@
 <body>
 <script src="js/jquery.js"></script>
 <script>
-    $.ajax("data/users.json").done(function(data, status, jqXhr) {
-        alert("AJAX call completed successfully!");
-        console.log("Request status: " + status);
-        console.log("Data returned from server:");
-        console.log(data);
+    "use strict";
+
+    $(document).ready(function() {
+        $.ajax("data/users.json").done(function(data, status, jqXhr) {
+            alert("AJAX call completed successfully!");
+            console.log("Request status: " + status);
+            console.log("Data returned from server:");
+            console.log(data);
+        });
     });
 </script>
 </body>
