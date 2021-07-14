@@ -1,6 +1,6 @@
 body {
     font-family: Avenir, sans-serif;
-    color: #7b3200;
+    color: #654321;
 }
 
 dt {
@@ -11,7 +11,7 @@ dt {
 button {
     padding: 1em 2em;
     color: white;
-    background-color: #7b3200;
+    background-color: #654321;
     border: none;
     border-radius: 0.5em;
 }
@@ -28,7 +28,7 @@ button {
 .picture-frame {
     height: 240px;
     width: 320px;
-    border: 2em inset #7b3200;
+    border: 2em inset #654321;
     position: relative;
 }
 
