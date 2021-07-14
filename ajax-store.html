@@ -11,20 +11,22 @@
 </head>
 <body>
 
-<h1>My Tool Store</h1>
+<div class="container">
+    <h1>Coyle's Tool Store</h1>
 
-<table id="products">
-    <thead>
+    <table id="products" class="table table-striped">
+        <thead class="table-success">
         <tr>
             <th>Title</th>
             <th>Quantity</th>
             <th>Price</th>
             <th>Categories</th>
         </tr>
-    </thead>
-    <tbody id="insertProducts"></tbody>
-</table>
-<button id="refresh" type="button">Refresh</button>
+        </thead>
+        <tbody id="insertProducts"></tbody>
+    </table>
+    <button id="refresh" class="btn btn-success" type="button">Refresh</button>
+</div>
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -47,6 +49,8 @@
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
+    var tableBody = $('#insertProducts');
+
     $.get("data/inventory.json", {
         limit:  10,
         offset: 20
@@ -63,7 +67,6 @@
     });
 
     $('#refresh').click(function() {
-        var tableBody = $('#insertProducts');
         tableBody.html('');
 
         $.get("data/inventory.json", {
@@ -78,6 +81,10 @@
                 tableBody.append('<tr><td>' + columns.join('</td><td>') + '</td></tr>');
             });
         });
+    });
+
+    tableBody.children().each(function(index) {
+        console.log($(this));
     });
 })();
 </script>
