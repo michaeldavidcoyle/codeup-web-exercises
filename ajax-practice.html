@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Requests</title>
+</head>
+<body>
+<script src="js/jquery.js"></script>
+<script>
+    $.ajax("data/users.json").done(function(data, status, jqXhr) {
+        alert("AJAX call completed successfully!");
+        console.log("Request status: " + status);
+        console.log("Data returned from server:");
+        console.log(data);
+    });
+</script>
+</body>
+</html>
