@@ -44,6 +44,24 @@
             $('#insertProducts').append('<tr><td>' + columns.join('</td><td>') + '</td></tr>');
         });
     });
+
+    $('#refresh').click(function() {
+        var tableBody = $('#insertProducts');
+        tableBody.html('');
+
+        $.get("data/inventory.json", {
+            limit:  10,
+            offset: 20
+        }).done(function(data) {
+            data.forEach(function(datum) {
+                var columns = [
+                    datum.title, datum.quantity, datum.price, datum.categories.join(', ')
+                ];
+
+                tableBody.append('<tr><td>' + columns.join('</td><td>') + '</td></tr>');
+            });
+        });
+    });
 })();
 </script>
 
