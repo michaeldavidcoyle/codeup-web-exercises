@@ -16,5 +16,21 @@
             "sugar"
         ],
         "date": "February 14, 2015"
+    }, {
+        "title": "My Third Blog Post",
+        "content": "Doggo ipsum puggorino dat tungg tho big ol heckin very good spot, boof floofs vvv. Such treat boof heckin angery woofer long doggo shibe, heckin good boys lotsa pats bork.",
+        "categories": [
+            "dogs"
+        ],
+        "date": "March 17, 2015"
+    }, {
+        "title": "The Fourth Post",
+        "content": "Conjunction Junction, what's your function? Hooking up words and phrases and clauses. Conjunction Junction, how's that function? I got three favorite cars That get most of my job done. Conjunction Junction, what's their function? I got \"and\", \"but\", and \"or\", They'll get you pretty far.",
+        "categories": [
+            "English",
+            "School House Rock",
+            "trains"
+        ],
+        "date": "April 10, 2015"
     }
 ]
