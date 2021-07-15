@@ -8,7 +8,7 @@
     //       HINT: You will want to target #insertProducts for your new HTML elements
     var tableBody = $('#insertProducts');
 
-    function getAndLoadJson(data) {
+    function loadJson(data) {
         // console.log('Inventory: ');
         // console.log(data);
         data.forEach(function(datum) {
@@ -22,7 +22,7 @@
     $.get("data/inventory.json", {
         limit:  10,
         offset: 20
-    }).done(getAndLoadJson);
+    }).done(loadJson);
 
     $('#refresh').click(function() {
         tableBody.html('');
@@ -30,7 +30,7 @@
         $.get("data/inventory.json", {
             limit:  10,
             offset: 20
-        }).done(getAndLoadJson);
+        }).done(loadJson);
     });
 
     tableBody.children().each(function(index) {
