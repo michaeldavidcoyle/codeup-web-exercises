@@ -32,29 +32,34 @@
         }
     ];
 
+    var marker,
+        popup;
+
     mapboxgl.accessToken = MAPBOX_API_KEY;
     var map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-98.4916, 29.4252], // starting position [lng, lat]
+        center: [-87.6298, 41.8781], // starting position [lng, lat]
         zoom: 10 // starting zoom
     });
 
-    geocode("162 E Superior St, Chicago, IL 60611", MAPBOX_API_KEY).then(function(coordinates) {
-        console.log(coordinates);
-        map.setCenter(coordinates);
-        map.setZoom(12);
+    restaurants.forEach(function (restaurant) {
+        geocode(restaurant.address, MAPBOX_API_KEY).then(function (coordinates) {
+            console.log(coordinates);
+            map.setCenter(coordinates);
+            map.setZoom(12);
 
-        var marker = new mapboxgl.Marker()
-            .setLngLat(coordinates)
-            .addTo(map);
+            marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map);
 
-        var popup = new mapboxgl.Popup()
-            .setHTML("<p><strong>Gino's East</strong><br>162 E Superior St<br>Chicago, IL 60611<br>Chicago Style Pizza</p>")
-            .addTo(map);
+            popup = new mapboxgl.Popup()
+                .setHTML(`<p><strong>${restaurant.name}</strong><br>${restaurant.address}<br>${restaurant.foodType}</p>`)
+                .addTo(map);
 
-        marker.setPopup(popup);
-        marker.togglePopup();
+            marker.setPopup(popup);
+            marker.togglePopup();
+        });
     });
 </script>
 </body>
