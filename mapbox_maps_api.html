@@ -21,6 +21,12 @@
         center: [-98.4916, 29.4252], // starting position [lng, lat]
         zoom: 10 // starting zoom
     });
+
+    geocode("162 E Superior St, Chicago, IL 60611", MAPBOX_API_KEY).then(function(result) {
+        console.log(result);
+        map.setCenter(result);
+        map.setZoom(12);
+    });
 </script>
 </body>
 </html>
