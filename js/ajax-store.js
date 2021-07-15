@@ -7,6 +7,7 @@
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
     var tableBody = $('#insertProducts');
+    var alphaSorted = false;
     var quantitySorted = false;
     var inventory;
 
@@ -24,11 +25,24 @@
     }
 
     function loadSorted(data) {
-        data.sort(function(a, b) {
-            if (a['title'] < b['title']) return -1;
-            if (a['title'] > b['title']) return 1;
-            return 0;
-        });
+        if (alphaSorted) {
+            data.sort(function(a, b) {
+                if (a['title'] < b['title']) return 1;
+                if (a['title'] > b['title']) return -1;
+                return 0;
+            });
+
+            alphaSorted = false;
+        } else {
+            data.sort(function(a, b) {
+                if (a['title'] < b['title']) return -1;
+                if (a['title'] > b['title']) return 1;
+                return 0;
+            });
+
+            alphaSorted = true;
+        }
+
         loadJson(data);
     }
 
