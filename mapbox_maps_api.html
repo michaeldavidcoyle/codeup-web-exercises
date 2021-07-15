@@ -14,6 +14,24 @@
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
+    var restaurants = [
+        {
+            name: "Gino's East",
+            address: '162 E Superior St, Chicago, IL 60611',
+            foodType: 'Chicago Style Pizza'
+        },
+        {
+            name: "Fontano's Subs",
+            address: '1058 W Polk St, Chicago, IL 60607',
+            foodType: 'Sandwiches'
+        },
+        {
+            name: "Portillo's",
+            address: '100 W. Ontario, Chicago IL 60654',
+            foodType: 'Hot dogs, Beef, Burgers, Salads'
+        }
+    ];
+
     mapboxgl.accessToken = MAPBOX_API_KEY;
     var map = new mapboxgl.Map({
         container: 'map', // container ID
