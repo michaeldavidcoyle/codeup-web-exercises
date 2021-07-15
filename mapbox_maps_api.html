@@ -15,6 +15,12 @@
 <body>
 
 <div id="map" style="width: 80vw; height: 80vh;"></div>
+<label for="zoom-select">Zoom</label>
+<select name="zoom-select" id="zoom-select">
+    <option value="5">5</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+</select>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
@@ -43,21 +49,22 @@
     ];
 
     var marker,
-        popup;
+        popup,
+        zoomLevel = 12,
+        zoomSelect = document.getElementById('zoom-select');
 
     mapboxgl.accessToken = MAPBOX_API_KEY;
     var map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: [-87.6298, 41.8781], // starting position [lng, lat]
-        zoom: 10 // starting zoom
+        zoom: zoomLevel // starting zoom
     });
 
     restaurants.forEach(function (restaurant) {
         geocode(restaurant.address, MAPBOX_API_KEY).then(function (coordinates) {
             console.log(coordinates);
             map.setCenter(coordinates);
-            map.setZoom(12);
 
             marker = new mapboxgl.Marker()
                 .setLngLat(coordinates)
@@ -79,6 +86,11 @@
             marker.setPopup(popup);
             marker.togglePopup();
         });
+    });
+
+    zoomSelect.addEventListener('change', function() {
+        console.log(this)
+        map.setZoom(this.value);
     });
 </script>
 </body>
