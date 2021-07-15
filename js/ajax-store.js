@@ -7,6 +7,7 @@
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
     var tableBody = $('#insertProducts');
+    var inventory;
 
     function loadJson(data) {
         // console.log('Inventory: ');
@@ -17,6 +18,17 @@
             ];
             tableBody.append('<tr><td>' + columns.join('</td><td>') + '</td></tr>');
         });
+
+        inventory = data;
+    }
+
+    function loadSorted(data) {
+        data.sort(function(a, b) {
+            if (a['title'] < b['title']) return -1;
+            if (a['title'] > b['title']) return 1;
+            return 0;
+        });
+        loadJson(data);
     }
 
     $.get("data/inventory.json", {
@@ -33,7 +45,8 @@
         }).done(loadJson);
     });
 
-    tableBody.children().each(function(index) {
-        console.log($(this));
+    $('#sort').click(function() {
+        tableBody.html('');
+        loadSorted(inventory);
     });
 })();
