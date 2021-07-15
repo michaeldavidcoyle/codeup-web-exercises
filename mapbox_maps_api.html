@@ -25,11 +25,16 @@
     geocode("162 E Superior St, Chicago, IL 60611", MAPBOX_API_KEY).then(function(coordinates) {
         console.log(coordinates);
         map.setCenter(coordinates);
-        map.setZoom(18);
+        map.setZoom(12);
 
         var marker = new mapboxgl.Marker()
             .setLngLat(coordinates)
             .addTo(map);
+
+        var popup = new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML("<p>Gino's East</p>")
+            .addTo(map)
     });
 </script>
 </body>
