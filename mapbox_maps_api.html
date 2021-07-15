@@ -6,11 +6,15 @@
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet'/>
-
+    <style>
+        .img-popup {
+            max-width: 200px;
+        }
+    </style>
 </head>
 <body>
 
-<div id="map" style="width: 75vw; height: 75vh;"></div>
+<div id="map" style="width: 80vw; height: 80vh;"></div>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
@@ -18,17 +22,23 @@
         {
             name: "Gino's East",
             address: '162 E Superior St, Chicago, IL 60611',
-            foodType: 'Chicago Style Pizza'
+            foodType: 'Chicago Style Pizza',
+            image: '<img class="img-popup" src="img/chicago-pizza.jpeg" alt="Chicago Style Pizza">',
+            info: 'Who doesn\'t like Chicago style pizza?'
         },
         {
             name: "Fontano's Subs",
             address: '1058 W Polk St, Chicago, IL 60607',
-            foodType: 'Sandwiches'
+            foodType: 'Sandwiches',
+            image: '<img class="img-popup" src="img/fontanos-sub.png" alt="Fontano\'s Sub">',
+            info: 'Discovered another location of this great sandwich shop on Jackson St while I was a student at <a href="https://www.saic.edu/" target="_blank">SAIC</a>. This is their original location.'
         },
         {
             name: "Portillo's",
             address: '100 W. Ontario, Chicago IL 60654',
-            foodType: 'Hot dogs, Beef, Burgers, Salads'
+            foodType: 'Hot dogs, Beef, Burgers, Salads',
+            image: '<img class="img-popup" src="img/portillos-burger.jpeg" alt="Portillo\'s Burger">',
+            info: 'Didn\'t care for most burger joints in Chicago, but this one was the exception.'
         }
     ];
 
@@ -54,7 +64,16 @@
                 .addTo(map);
 
             popup = new mapboxgl.Popup()
-                .setHTML(`<p><strong>${restaurant.name}</strong><br>${restaurant.address}<br>${restaurant.foodType}</p>`)
+                .setHTML(`
+                    ${restaurant.image}
+                    <p><strong>${restaurant.name}</strong>
+                    <br>
+                    ${restaurant.address}
+                    <br>
+                    ${restaurant.foodType}
+                    <br>
+                    ${restaurant.info}
+                    </p>`)
                 .addTo(map);
 
             marker.setPopup(popup);
