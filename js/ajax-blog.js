@@ -11,10 +11,12 @@ $(document).ready(function() {
     }).done(function(data) {
         data.forEach(function(datum) {
             $('#posts').append(
-                '<h2>' + datum['title'] + '</h2>',
-                '<p>' + datum['date'] + '</p>',
+                '<div class="m-2 p-2 border-bottom">',
+                '<h2 class="darkgreen">' + datum['title'] + '</h2>',
+                '<p class="text-secondary">' + datum['date'] + '</p>',
                 '<p>' + datum['content'] + '</p>',
-                '<p>' + datum['categories'].join(', ') + '</p>'
+                '<p>' + datum['categories'].join(', ') + '</p>',
+                '</div>'
             );
         });
     });
