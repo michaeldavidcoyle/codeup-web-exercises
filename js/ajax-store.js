@@ -7,9 +7,10 @@
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
     var tableBody = $('#insertProducts');
+    var inventory;
     var alphaSorted = false;
     var quantitySorted = false;
-    var inventory;
+    var priceSorted = false;
 
     function loadJson(data) {
         // console.log('Inventory: ');
@@ -64,6 +65,24 @@
         loadJson(data);
     }
 
+    function loadPriceSorted(data) {
+        if (priceSorted) {
+            data.sort(function(a, b) {
+                return b['price'] - a['price'];
+            });
+
+            priceSorted = false;
+        } else {
+            data.sort(function(a, b) {
+                return a['price'] - b['price'];
+            });
+
+            priceSorted = true;
+        }
+
+        loadJson(data);
+    }
+
     $.get("data/inventory.json", {
         limit:  10,
         offset: 20
@@ -86,5 +105,10 @@
     $('#sort-quantity').click(function() {
         tableBody.html('');
         loadQuantitySorted(inventory);
+    });
+
+    $('#sort-price').click(function() {
+        tableBody.html('');
+        loadPriceSorted(inventory);
     });
 })();
