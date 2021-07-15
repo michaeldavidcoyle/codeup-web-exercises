@@ -17,7 +17,7 @@
         // console.log(data);
         data.forEach(function(datum) {
             var columns = [
-                datum.title, datum.quantity, datum.price, datum.categories.join(', ')
+                datum.title, datum.quantity, '$' + datum.price, datum.categories.join(', ')
             ];
             tableBody.append('<tr><td>' + columns.join('</td><td>') + '</td></tr>');
         });
