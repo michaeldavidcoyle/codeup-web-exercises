@@ -21,6 +21,8 @@
     <option value="15">15</option>
     <option value="20">20</option>
 </select>
+<label for="address-marker">Enter address</label>
+<textarea name="address-marker" id="address-marker" cols="30" rows="3">Enter address to place marker</textarea>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
@@ -51,7 +53,8 @@
     var marker,
         popup,
         zoomLevel = 12,
-        zoomSelect = document.getElementById('zoom-select');
+        zoomSelect = document.getElementById('zoom-select'),
+        addressMarker = document.getElementById('address-marker');
 
     mapboxgl.accessToken = MAPBOX_API_KEY;
     var map = new mapboxgl.Map({
@@ -91,6 +94,17 @@
     zoomSelect.addEventListener('change', function() {
         console.log(this);
         map.setZoom(this.value);
+    });
+
+    addressMarker.addEventListener('change', function() {
+        geocode(this.value, MAPBOX_APareaI_KEY).then(function (coordinates) {
+            console.log(coordinates);
+            map.setCenter(coordinates);
+
+            marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map);
+        });
     });
 </script>
 </body>
