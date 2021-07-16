@@ -7,5 +7,10 @@ $(document).ready(function() {
         units: 'imperial'
     }).done(function(data) {
         console.log(data);
+        $('#main-heading').html(`${data.name} Weather`);
+        $('#current-temp').html(`${data.main.temp}&deg; F`);
+        $('#feels-like').html(`Feels like: ${data.main.feels_like}&deg`)
+        $('#conditions').html(data.weather[0].description);
+        $('#hi-lo').html(`${data.main.temp_max}&deg;/${data.main.temp_min}&deg;`);
     });
 });
