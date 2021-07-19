@@ -9,7 +9,9 @@ $(document).ready(function() {
         }
 
     var place = 'San Antonio',
-        today, i;
+        mouseCoords,
+        today,
+        i;
 
     $('#place').html(place);
 
@@ -48,6 +50,10 @@ $(document).ready(function() {
         center: [coordinates.lon, coordinates.lat]
     });
 
+    var marker = new mapboxgl.Marker()
+        // .setLngLat([coordinates.lon, coordinates.lat])
+        // .addTo(map);
+
     geocode(place, MAPBOX_API_KEY).then(function(coords) {
         console.log(coords);
         map.setCenter(coords);
@@ -71,6 +77,12 @@ $(document).ready(function() {
     });
 
     map.on('mousemove', function(event) {
-        console.log(event.lngLat);
+        // console.log(event.lngLat);
+        mouseCoords = event.lngLat;
+    });
+
+    map.on('click', function(event) {
+        marker.setLngLat(mouseCoords)
+            .addTo(map);
     });
 });
