@@ -81,6 +81,16 @@ $(document).ready(function() {
         mouseCoords = event.lngLat;
     });
 
+    function humanReadableCoordinates(coords) {
+        var latDir = coords.lat > 0 ? 'N' : 'S';
+        var lngDir = coords.lng > 0 ? 'E' : 'W';
+
+        var long = Math.abs(coords.lng).toFixed(5);
+        var latt = Math.abs(coords.lat).toFixed(5);
+
+        return `${latt}&deg; ${latDir}, ${long}&deg; ${lngDir}`;
+    }
+
     map.on('click', function(event) {
         marker.setLngLat(mouseCoords)
             .addTo(map);
@@ -90,6 +100,7 @@ $(document).ready(function() {
         // console.log(event);
         // console.log(mouseCoords);
         getForecast(coordinates);
+        $('#place').html(humanReadableCoordinates(mouseCoords));
         map.setCenter(mouseCoords);
     });
 });
