@@ -84,5 +84,12 @@ $(document).ready(function() {
     map.on('click', function(event) {
         marker.setLngLat(mouseCoords)
             .addTo(map);
+
+        coordinates.lon = mouseCoords.lng;
+        coordinates.lat = mouseCoords.lat;
+        // console.log(event);
+        // console.log(mouseCoords);
+        getForecast(coordinates);
+        map.setCenter(mouseCoords);
     });
 });
