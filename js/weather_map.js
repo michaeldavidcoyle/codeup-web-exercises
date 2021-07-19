@@ -32,7 +32,7 @@ $(document).ready(function() {
                 today = new Date(day.dt * SEC);
 
                 card = `<div class="card">
-                            <div class="card-header">${today.toDateString()}</div>
+                            <div class="card-header"><h5>${today.toDateString().slice(0, 9)}</h5></div>
                             <div class="card-body">
                                 <div class="text-center">
                                     <h3 class="card-title">${day.temp.max}&deg; / ${day.temp.min}&deg;</h3>
