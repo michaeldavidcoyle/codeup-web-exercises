@@ -48,11 +48,10 @@ $(document).ready(function() {
         center: [coordinates.lon, coordinates.lat]
     });
 
-
     geocode(place, MAPBOX_API_KEY).then(function(coords) {
         console.log(coords);
         map.setCenter(coords);
-        map.setZoom(10);
+        map.setZoom(7.5);
     });
 
     $('#search-btn').click(function(event) {
@@ -69,5 +68,9 @@ $(document).ready(function() {
             $('#place').html(place);
             getForecast(coordinates);
         });
+    });
+
+    map.on('mousemove', function(event) {
+        console.log(event.lngLat);
     });
 });
