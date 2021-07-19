@@ -10,8 +10,7 @@ $(document).ready(function() {
 
     var place = 'San Antonio',
         mouseCoords,
-        today,
-        i;
+        today;
 
     $('#place').html(place);
 
@@ -24,18 +23,31 @@ $(document).ready(function() {
             lon:   coords.lon,
             units: 'imperial'
         }).done(function(data) {
-            data.daily.forEach(function(day, index) {
+            var forecast = $('#forecast'),
+                card;
+
+            forecast.html('');
+
+            data.daily.slice(0, 5).forEach(function(day) {
                 today = new Date(day.dt * SEC);
-                i = index + 1;
-                // $('#main-heading').html(`${data.name} Weather`);
-                $(`#day-${i}`).html(today.toDateString());
-                // $('#current-temp').html(`${data.main.temp}&deg; F`);
-                $(`#conditions-${i}`).attr('src', `http://openweathermap.org/img/w/${day.weather[0].icon}.png`);
-                $(`#hi-lo-${i}`).html(`${day.temp.max}&deg; / ${day.temp.min}&deg;`);
-                $(`#description-${i}`).html(day.weather[0].description);
-                $(`#humidity-${i}`).html(`Humidity: ${day.humidity}%`);
-                $(`#wind-${i}`).html(`Wind speed: ${day.wind_speed} mph`);
-                $(`#pressure-${i}`).html(`Pressure: ${day.pressure} hPa`);
+
+                card = `<div class="card">
+                            <div class="card-header">${today.toDateString()}</div>
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <h3 class="card-title">${day.temp.max}&deg; / ${day.temp.min}&deg;</h3>
+                                    <img src="http://openweathermap.org/img/w/${day.weather[0].icon}.png" alt="Weather Conditions">
+                                    <span>${day.weather[0].description}</span>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Humidity: ${day.humidity}%</li>
+                                    <li class="list-group-item">Wind speed: ${day.wind_speed} mph</li>
+                                    <li class="list-group-item">Pressure: ${day.pressure} hPa</li>
+                                </ul>
+                            </div>
+                        </div>`;
+
+                forecast.append(card);
             });
         });
     }
