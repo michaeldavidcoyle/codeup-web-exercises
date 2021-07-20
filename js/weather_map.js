@@ -1,29 +1,6 @@
 "use strict";
 
 $(document).ready(function () {
-    const compassDirections = [
-        'N', 'NNE', 'NE', 'ENE',
-        'E', 'ESE', 'SE', 'SSE',
-        'S', 'SSW', 'SW', 'WSW',
-        'W', 'WNW', 'NW', 'NNW',
-        'N'
-    ];
-
-    const SEC = 1000;
-
-    var coordinates = {
-        lat: 29.423017,
-        lon: -98.48527
-    }
-
-    var place = 'San Antonio',
-        mouseCoords,
-        today;
-
-    $('#place').html(place);
-
-    const searchInput = $('#search-input');
-
     function getForecast(coords) {
         $.get("https://api.openweathermap.org/data/2.5/onecall", {
             appid: OPEN_WEATHER_API_KEY,
@@ -33,6 +10,7 @@ $(document).ready(function () {
         }).done(function (data) {
             var forecast = $('#forecast'),
                 card,
+                today,
                 high,
                 low,
                 chancePrecipitation,
@@ -81,7 +59,38 @@ $(document).ready(function () {
         });
     }
 
+    function humanReadableCoordinates(coords) {
+        var latDir = coords.lat > 0 ? 'N' : 'S';
+        var lngDir = coords.lng > 0 ? 'E' : 'W';
+
+        var long = Math.abs(coords.lng).toFixed(5);
+        var latt = Math.abs(coords.lat).toFixed(5);
+
+        return `${latt}&deg; ${latDir}, ${long}&deg; ${lngDir}`;
+    }
+
+    const compassDirections = [
+        'N', 'NNE', 'NE', 'ENE',
+        'E', 'ESE', 'SE', 'SSE',
+        'S', 'SSW', 'SW', 'WSW',
+        'W', 'WNW', 'NW', 'NNW',
+        'N'
+    ];
+
+    const SEC = 1000;
+    const searchInput = $('#search-input');
+
+    var coordinates = {
+        lat: 29.423017,
+        lon: -98.48527
+    }
+
     getForecast(coordinates);
+
+    var place = 'San Antonio',
+        mouseCoords;
+
+    $('#place').html(place);
 
     mapboxgl.accessToken = MAPBOX_API_KEY;
     var map = new mapboxgl.Map({
@@ -121,16 +130,6 @@ $(document).ready(function () {
         // console.log(event.lngLat);
         mouseCoords = event.lngLat;
     });
-
-    function humanReadableCoordinates(coords) {
-        var latDir = coords.lat > 0 ? 'N' : 'S';
-        var lngDir = coords.lng > 0 ? 'E' : 'W';
-
-        var long = Math.abs(coords.lng).toFixed(5);
-        var latt = Math.abs(coords.lat).toFixed(5);
-
-        return `${latt}&deg; ${latDir}, ${long}&deg; ${lngDir}`;
-    }
 
     map.on('click', function (event) {
         marker.setLngLat(mouseCoords)
