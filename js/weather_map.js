@@ -1,6 +1,14 @@
 "use strict";
 
 $(document).ready(function () {
+    const compassDirections = [
+        'N', 'NNE', 'NE', 'ENE',
+        'E', 'ESE', 'SE', 'SSE',
+        'S', 'SSW', 'SW', 'WSW',
+        'W', 'WNW', 'NW', 'NNW',
+        'N'
+    ];
+
     const SEC = 1000;
 
     var coordinates = {
@@ -27,13 +35,12 @@ $(document).ready(function () {
                 card;
 
             forecast.html('');
-
             data.daily.slice(0, 5).forEach(function (day) {
                 today = new Date(day.dt * SEC);
-
+                console.log(day.wind_deg);
                 card = `<div class="card text-center">
                             <div class="card-header">
-                                <h5>${today.toDateString().slice(0, 9)}</h5>
+                                <h5>${today.toDateString().slice(0, 10)}</h5>
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">${Math.round(day.temp.max)}&deg; 
@@ -49,7 +56,8 @@ $(document).ready(function () {
                                         <span class="text-primary">Humidity: </span>${day.humidity}%
                                     </li>
                                     <li class="list-group-item">
-                                        <i class="fas fa-wind text-primary"></i> ${Math.round(day.wind_speed)} mph
+                                        <i class="fas fa-wind text-primary"></i>
+                                        ${compassDirections[Math.round(day.wind_deg / 22.5)]} ${Math.round(day.wind_speed)} mph
                                     </li>
                                     <li class="list-group-item">
                                         <span class="text-primary">Pressure: </span>${day.pressure} hPa
