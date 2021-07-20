@@ -31,10 +31,10 @@ $(document).ready(function() {
             data.daily.slice(0, 5).forEach(function(day) {
                 today = new Date(day.dt * SEC);
 
-                card = `<div class="card">
+                card = `<div class="card text-center">
                             <div class="card-header"><h5>${today.toDateString().slice(0, 9)}</h5></div>
                             <div class="card-body">
-                                <div class="text-center">
+                                <div >
                                     <h3 class="card-title">${Math.round(day.temp.max)}&deg; 
                                         <span class="h4">/ ${Math.round(day.temp.min)}&deg;</span>
                                     </h3>
@@ -42,10 +42,18 @@ $(document).ready(function() {
                                     <span>${day.weather[0].description}</span>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Chance of rain: ${Math.round(day.pop * 100)}%</li>
-                                    <li class="list-group-item">Humidity: ${day.humidity}%</li>
-                                    <li class="list-group-item">Wind speed: ${day.wind_speed} mph</li>
-                                    <li class="list-group-item">Pressure: ${day.pressure} hPa</li>
+                                    <li class="list-group-item">
+                                        <i class="fas fa-cloud-rain text-primary"></i> ${Math.round(day.pop * 100)}%
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="text-primary">Humidity: </span>${day.humidity}%
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="fas fa-wind text-primary"></i> ${Math.round(day.wind_speed)} mph
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span class="text-primary">Pressure: </span>${day.pressure} hPa
+                                    </li>
                                 </ul>
                             </div>
                         </div>`;
