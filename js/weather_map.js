@@ -35,7 +35,9 @@ $(document).ready(function() {
                             <div class="card-header"><h5>${today.toDateString().slice(0, 9)}</h5></div>
                             <div class="card-body">
                                 <div class="text-center">
-                                    <h3 class="card-title">${day.temp.max}&deg; / ${day.temp.min}&deg;</h3>
+                                    <h3 class="card-title">${Math.round(day.temp.max)}&deg; 
+                                        <span class="h4">/ ${Math.round(day.temp.min)}&deg;</span>
+                                    </h3>
                                     <img src="http://openweathermap.org/img/w/${day.weather[0].icon}.png" alt="Weather Conditions">
                                     <span>${day.weather[0].description}</span>
                                 </div>
