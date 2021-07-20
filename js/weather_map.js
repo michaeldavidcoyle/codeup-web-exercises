@@ -141,8 +141,15 @@ $(document).ready(function () {
         // console.log(event);
         // console.log(mouseCoords);
         getForecast(coordinates);
-        $('#place').html(humanReadableCoordinates(mouseCoords));
+        // $('#place').html(humanReadableCoordinates(mouseCoords));
         map.setCenter(mouseCoords);
+
+        reverseGeocode(mouseCoords, MAPBOX_API_KEY).then(function(results) {
+            place = results.match(/(?:\w+ *\w*)(?=, \w+ \d{5})/);
+            if (place === null) place = humanReadableCoordinates(mouseCoords);
+
+            $('#place').html(place);
+        });
     });
 
     $('#select-zoom').change(function() {
