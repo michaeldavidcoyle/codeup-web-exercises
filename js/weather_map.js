@@ -42,6 +42,7 @@ $(document).ready(function() {
                                     <span>${day.weather[0].description}</span>
                                 </div>
                                 <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Chance of rain: ${Math.round(day.pop * 100)}%</li>
                                     <li class="list-group-item">Humidity: ${day.humidity}%</li>
                                     <li class="list-group-item">Wind speed: ${day.wind_speed} mph</li>
                                     <li class="list-group-item">Pressure: ${day.pressure} hPa</li>
