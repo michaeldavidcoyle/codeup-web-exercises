@@ -1,5 +1,4 @@
 "use strict";
-
 $(document).ready(function () {
     function getForecast(coords) {
         $.get("https://api.openweathermap.org/data/2.5/onecall", {
@@ -88,6 +87,7 @@ $(document).ready(function () {
     getForecast(coordinates);
 
     var place = 'San Antonio',
+        zoomLevel = 7.5,
         mouseCoords;
 
     $('#place').html(place);
@@ -96,7 +96,7 @@ $(document).ready(function () {
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
+        zoom: zoomLevel,
         center: [coordinates.lon, coordinates.lat]
     });
 
@@ -107,7 +107,7 @@ $(document).ready(function () {
     geocode(place, MAPBOX_API_KEY).then(function (coords) {
         console.log(coords);
         map.setCenter(coords);
-        map.setZoom(7.5);
+        map.setZoom(zoomLevel);
     });
 
     $('#search-btn').click(function (event) {
@@ -116,7 +116,7 @@ $(document).ready(function () {
         geocode(place, MAPBOX_API_KEY).then(function (coords) {
             console.log(coords);
             map.setCenter(coords);
-            map.setZoom(10);
+            map.setZoom(zoomLevel);
 
             coordinates.lon = coords[0];
             coordinates.lat = coords[1];
@@ -142,5 +142,9 @@ $(document).ready(function () {
         getForecast(coordinates);
         $('#place').html(humanReadableCoordinates(mouseCoords));
         map.setCenter(mouseCoords);
+    });
+
+    $('#select-zoom').change(function() {
+        map.setZoom($(this).val());
     });
 });
