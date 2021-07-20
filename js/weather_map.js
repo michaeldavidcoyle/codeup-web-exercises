@@ -145,6 +145,11 @@ $(document).ready(function () {
         map.setCenter(mouseCoords);
 
         reverseGeocode(mouseCoords, MAPBOX_API_KEY).then(function(results) {
+            /*
+             * This function returns an address, so the regular expression below
+             * should match city names of 1 or 2 words that are followed by a state
+             * and zip code.
+             */
             place = results.match(/(?:\w+ *\w*)(?=, \w+ \d{5})/);
             if (place === null) place = humanReadableCoordinates(mouseCoords);
 
