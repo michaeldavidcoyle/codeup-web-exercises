@@ -32,32 +32,42 @@ $(document).ready(function () {
             units: 'imperial'
         }).done(function (data) {
             var forecast = $('#forecast'),
-                card;
+                card,
+                high,
+                low,
+                chancePrecipitation,
+                windDirection,
+                windSpeed;
 
             forecast.html('');
+
             data.daily.slice(0, 5).forEach(function (day) {
-                today = new Date(day.dt * SEC);
-                console.log(day.wind_deg);
+                today = new Date(day.dt * SEC).toDateString().slice(0, 10);
+                high = Math.round(day.temp.max);
+                low = Math.round(day.temp.min);
+                chancePrecipitation = Math.round(day.pop * 100);
+                windDirection = compassDirections[Math.round(day.wind_deg / 22.5)];
+                windSpeed = Math.round(day.wind_speed);
+
                 card = `<div class="card text-center">
                             <div class="card-header">
-                                <h5>${today.toDateString().slice(0, 10)}</h5>
+                                <h5>${today}</h5>
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title">${Math.round(day.temp.max)}&deg; 
-                                    <span class="h4">/ ${Math.round(day.temp.min)}&deg;</span>
+                                <h3 class="card-title">${high}&deg; 
+                                    <span class="h4">/ ${low}&deg;</span>
                                 </h3>
                                 <img src="http://openweathermap.org/img/w/${day.weather[0].icon}.png" alt="Weather Conditions">
                                 <span>${day.weather[0].description}</span>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
-                                        <i class="fas fa-cloud-rain text-primary"></i> ${Math.round(day.pop * 100)}%
+                                        <i class="fas fa-cloud-rain text-primary"></i> ${chancePrecipitation}%
                                     </li>
                                     <li class="list-group-item">
                                         <span class="text-primary">Humidity: </span>${day.humidity}%
                                     </li>
                                     <li class="list-group-item">
-                                        <i class="fas fa-wind text-primary"></i>
-                                        ${compassDirections[Math.round(day.wind_deg / 22.5)]} ${Math.round(day.wind_speed)} mph
+                                        <i class="fas fa-wind text-primary"></i> ${windDirection} ${windSpeed} mph
                                     </li>
                                     <li class="list-group-item">
                                         <span class="text-primary">Pressure: </span>${day.pressure} hPa
