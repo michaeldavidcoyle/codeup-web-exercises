@@ -86,7 +86,6 @@ $(document).ready(function () {
     ];
 
     const SEC = 1000;
-    const searchInput = $('#search-input');
 
     var place = 'San Antonio',
         zoomLevel = 7.5,
@@ -114,7 +113,7 @@ $(document).ready(function () {
 
     $('#search-btn').click(function (event) {
         // console.log($(this).prev().val());
-        place = $(this).prev().val();
+        place = $('#search-input').val();
         geocode(place, MAPBOX_API_KEY).then(function (coords) {
             console.log(coords);
             map.setCenter(coords);
