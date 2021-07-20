@@ -32,15 +32,15 @@ $(document).ready(function() {
                 today = new Date(day.dt * SEC);
 
                 card = `<div class="card text-center">
-                            <div class="card-header"><h5>${today.toDateString().slice(0, 9)}</h5></div>
+                            <div class="card-header">
+                                <h5>${today.toDateString().slice(0, 9)}</h5>
+                            </div>
                             <div class="card-body">
-                                <div >
-                                    <h3 class="card-title">${Math.round(day.temp.max)}&deg; 
-                                        <span class="h4">/ ${Math.round(day.temp.min)}&deg;</span>
-                                    </h3>
-                                    <img src="http://openweathermap.org/img/w/${day.weather[0].icon}.png" alt="Weather Conditions">
-                                    <span>${day.weather[0].description}</span>
-                                </div>
+                                <h3 class="card-title">${Math.round(day.temp.max)}&deg; 
+                                    <span class="h4">/ ${Math.round(day.temp.min)}&deg;</span>
+                                </h3>
+                                <img src="http://openweathermap.org/img/w/${day.weather[0].icon}.png" alt="Weather Conditions">
+                                <span>${day.weather[0].description}</span>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
                                         <i class="fas fa-cloud-rain text-primary"></i> ${Math.round(day.pop * 100)}%
