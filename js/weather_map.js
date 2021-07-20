@@ -1,32 +1,40 @@
 "use strict";
 $(document).ready(function () {
+    var coordinates = {
+        lat: 29.423017,
+        lon: -98.48527
+    }
+
     function getForecast(coords) {
         $.get("https://api.openweathermap.org/data/2.5/onecall", {
             appid: OPEN_WEATHER_API_KEY,
             lat: coords.lat,
             lon: coords.lon,
             units: 'imperial'
-        }).done(function (data) {
-            var forecast = $('#forecast'),
-                card,
-                today,
-                high,
-                low,
-                chancePrecipitation,
-                windDirection,
-                windSpeed;
+        }).done(displayForecast);
+    }
 
-            forecast.html('');
+    function displayForecast(data) {
+        var forecast = $('#forecast'),
+            card,
+            today,
+            high,
+            low,
+            chancePrecipitation,
+            windDirection,
+            windSpeed;
 
-            data.daily.slice(0, 5).forEach(function (day) {
-                today = new Date(day.dt * SEC).toDateString().slice(0, 10);
-                high = Math.round(day.temp.max);
-                low = Math.round(day.temp.min);
-                chancePrecipitation = Math.round(day.pop * 100);
-                windDirection = compassDirections[Math.round(day.wind_deg / 22.5)];
-                windSpeed = Math.round(day.wind_speed);
+        forecast.html('');
 
-                card = `<div class="card text-center">
+        data.daily.slice(0, 5).forEach(function (day) {
+            today = new Date(day.dt * SEC).toDateString().slice(0, 10);
+            high = Math.round(day.temp.max);
+            low = Math.round(day.temp.min);
+            chancePrecipitation = Math.round(day.pop * 100);
+            windDirection = compassDirections[Math.round(day.wind_deg / 22.5)];
+            windSpeed = Math.round(day.wind_speed);
+
+            card = `<div class="card text-center">
                             <div class="card-header">
                                 <h5>${today}</h5>
                             </div>
@@ -53,8 +61,7 @@ $(document).ready(function () {
                             </div>
                         </div>`;
 
-                forecast.append(card);
-            });
+            forecast.append(card);
         });
     }
 
@@ -68,6 +75,8 @@ $(document).ready(function () {
         return `${latt}&deg; ${latDir}, ${long}&deg; ${lngDir}`;
     }
 
+    getForecast(coordinates);
+
     const compassDirections = [
         'N', 'NNE', 'NE', 'ENE',
         'E', 'ESE', 'SE', 'SSE',
@@ -78,13 +87,6 @@ $(document).ready(function () {
 
     const SEC = 1000;
     const searchInput = $('#search-input');
-
-    var coordinates = {
-        lat: 29.423017,
-        lon: -98.48527
-    }
-
-    getForecast(coordinates);
 
     var place = 'San Antonio',
         zoomLevel = 7.5,
