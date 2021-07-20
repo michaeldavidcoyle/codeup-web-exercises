@@ -1,12 +1,12 @@
 "use strict";
 
-$(document).ready(function() {
+$(document).ready(function () {
     const SEC = 1000;
 
     var coordinates = {
-            lat: 29.423017,
-            lon: -98.48527
-        }
+        lat: 29.423017,
+        lon: -98.48527
+    }
 
     var place = 'San Antonio',
         mouseCoords,
@@ -19,16 +19,16 @@ $(document).ready(function() {
     function getForecast(coords) {
         $.get("https://api.openweathermap.org/data/2.5/onecall", {
             appid: OPEN_WEATHER_API_KEY,
-            lat:    coords.lat,
-            lon:   coords.lon,
+            lat: coords.lat,
+            lon: coords.lon,
             units: 'imperial'
-        }).done(function(data) {
+        }).done(function (data) {
             var forecast = $('#forecast'),
                 card;
 
             forecast.html('');
 
-            data.daily.slice(0, 5).forEach(function(day) {
+            data.daily.slice(0, 5).forEach(function (day) {
                 today = new Date(day.dt * SEC);
 
                 card = `<div class="card text-center">
@@ -74,19 +74,19 @@ $(document).ready(function() {
     });
 
     var marker = new mapboxgl.Marker()
-        // .setLngLat([coordinates.lon, coordinates.lat])
-        // .addTo(map);
+    // .setLngLat([coordinates.lon, coordinates.lat])
+    // .addTo(map);
 
-    geocode(place, MAPBOX_API_KEY).then(function(coords) {
+    geocode(place, MAPBOX_API_KEY).then(function (coords) {
         console.log(coords);
         map.setCenter(coords);
         map.setZoom(7.5);
     });
 
-    $('#search-btn').click(function(event) {
+    $('#search-btn').click(function (event) {
         // console.log($(this).prev().val());
         place = $(this).prev().val();
-        geocode(place, MAPBOX_API_KEY).then(function(coords) {
+        geocode(place, MAPBOX_API_KEY).then(function (coords) {
             console.log(coords);
             map.setCenter(coords);
             map.setZoom(10);
@@ -99,7 +99,7 @@ $(document).ready(function() {
         });
     });
 
-    map.on('mousemove', function(event) {
+    map.on('mousemove', function (event) {
         // console.log(event.lngLat);
         mouseCoords = event.lngLat;
     });
@@ -114,7 +114,7 @@ $(document).ready(function() {
         return `${latt}&deg; ${latDir}, ${long}&deg; ${lngDir}`;
     }
 
-    map.on('click', function(event) {
+    map.on('click', function (event) {
         marker.setLngLat(mouseCoords)
             .addTo(map);
 
