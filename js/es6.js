@@ -40,10 +40,12 @@ const languages = ['html', 'css', 'javascript', 'php'];
 
 // TODO: rewrite the object literal using object property shorthand
 users.push({
-  name: name,
-  email: email,
-  languages: languages
+  name,
+  email,
+  languages
 });
+
+console.log(users[users.length - 1]);
 
 // TODO: replace `var` with `let` in the following variable declarations
 var emails = [];
