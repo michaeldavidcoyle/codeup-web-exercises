@@ -40,3 +40,11 @@ const users = [
 
 const threeLanuageUsers = users.filter(user => user.languages.length >= 3);
 console.log('Users with at least 3 languages: ', threeLanuageUsers);
+
+const user_emails = users.map(user => user.email);
+console.log('User emails: ', user_emails);
+
+const totalExperience = users.reduce((total, user) => total + user.yearsOfExperience, 0);
+const averageExperience = totalExperience / users.length;
+console.log(`Total experience: ${totalExperience} years`);
+console.log(`Average experience: ${averageExperience} years`);
