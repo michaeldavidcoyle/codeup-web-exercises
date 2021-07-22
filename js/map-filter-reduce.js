@@ -37,3 +37,8 @@ const users = [
         yearsOfExperience: 9
     }
 ];
+
+console.log(
+    'Users with at least 3 languages: ',
+    users.filter(user => user.languages.length >= 3)
+);
