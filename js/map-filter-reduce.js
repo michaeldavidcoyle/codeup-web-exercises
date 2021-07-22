@@ -48,3 +48,10 @@ const totalExperience = users.reduce((total, user) => total + user.yearsOfExperi
 const averageExperience = totalExperience / users.length;
 console.log(`Total experience: ${totalExperience} years`);
 console.log(`Average experience: ${averageExperience} years`);
+
+const longestEmailLength = users.reduce((longest, user) => {
+    return (user.email.length > longest) ? user.email.length : longest;
+}, 0);
+
+const longestEmail = users.filter(user => user.email.length === longestEmailLength)[0].email;
+console.log(`Longest email: ${longestEmail}`);
