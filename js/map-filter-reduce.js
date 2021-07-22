@@ -38,7 +38,5 @@ const users = [
     }
 ];
 
-console.log(
-    'Users with at least 3 languages: ',
-    users.filter(user => user.languages.length >= 3)
-);
+const threeLanuageUsers = users.filter(user => user.languages.length >= 3);
+console.log('Users with at least 3 languages: ', threeLanuageUsers);
