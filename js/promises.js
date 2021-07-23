@@ -6,8 +6,10 @@ function getLastCommitDate(username) {
         }
     }).then(response => {
         return response.json();
-    }).then(data => console.log('Date of last commit: ', data[0].created_at))
-        .catch(error => console.error('Oops, something went wrong: ', error));
+    }).then(data => {
+        let date = new Date(data[0].created_at);
+        console.log('Date of last commit: ', date.toDateString())
+    }).catch(error => console.error('Oops, something went wrong: ', error));
 }
 
 getLastCommitDate('michaeldavidcoyle');
