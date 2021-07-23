@@ -55,3 +55,6 @@ const longestEmailLength = users.reduce((longest, user) => {
 
 const longestEmail = users.filter(user => user.email.length === longestEmailLength)[0].email;
 console.log(`Longest email: ${longestEmail}`);
+
+const userNames = users.reduce((allUsers, user) => allUsers + user.name + ', ', '');
+console.log(`User names: ${userNames.slice(0, userNames.length - 2)}`);
