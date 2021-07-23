@@ -11,3 +11,14 @@ function getLastCommitDate(username) {
 }
 
 getLastCommitDate('michaeldavidcoyle');
+
+function wait(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(`I always keep my promises. Sorry you had to wait ${ms} milliseconds.`);
+        }, ms);
+    })
+}
+
+let milliseconds = Math.floor(Math.random() * 2001) + 1000;
+wait(milliseconds).then(result => console.log(result));
