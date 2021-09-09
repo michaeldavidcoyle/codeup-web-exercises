@@ -1,5 +1,11 @@
 "use strict";
 
+function lengthHandler(event) {
+    // console.log(this.value);
+    lengthOutput.innerText = this.value;
+    passwordLength = this.value;
+}
+
 const CHARS = {
     lower: [],
     upper: [],
@@ -33,3 +39,5 @@ let passwordLength = 8;
 let upperCount = 1;
 let numbersCount = 1;
 let symbolsCount = 2;
+
+lengthInput.addEventListener('change', lengthHandler);
