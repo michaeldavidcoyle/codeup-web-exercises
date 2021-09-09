@@ -21,4 +21,8 @@ for (let charCode = 33; charCode < 127; charCode++) {
     }
 }
 
-
+const lengthInput = document.getElementById('password-length');
+const lowerInput = document.getElementById('include-lower');
+const upperInput = document.getElementById('include-upper');
+const numbersInput = document.getElementById('include-numbers');
+const symbolsInput = document.getElementById('include-symbols');
