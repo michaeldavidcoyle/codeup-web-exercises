@@ -28,16 +28,24 @@ for (let charCode = 33; charCode < 127; charCode++) {
 }
 
 const lengthInput = document.getElementById('password-length');
-const lowerInput = document.getElementById('include-lower');
-const upperInput = document.getElementById('include-upper');
-const numbersInput = document.getElementById('include-numbers');
-const symbolsInput = document.getElementById('include-symbols');
+
+const includeLower = document.getElementById('include-lower');
+const includeUpper = document.getElementById('include-upper');
+const includeNumbers = document.getElementById('include-numbers');
+const includeSymbols = document.getElementById('include-symbols');
+
+const upperCount = document.getElementById('upper-count');
+const numbersCount = document.getElementById('numbers-count');
+const symbolsCount= document.getElementById('symbols-count');
 
 const lengthOutput = document.getElementById('length-output');
+const upperOutput = document.getElementById('upper-count-output');
+const numbersOutput = document.getElementById('numbers-count-output');
+const symbolsOutput = document.getElementById('symbols-count-output');
 
 let passwordLength = 8;
-let upperCount = 1;
-let numbersCount = 1;
-let symbolsCount = 2;
+let upperLength = 1;
+let numbersLength = 1;
+let symbolsLength = 2;
 
 lengthInput.addEventListener('change', lengthHandler);
