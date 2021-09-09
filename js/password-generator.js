@@ -26,3 +26,5 @@ const lowerInput = document.getElementById('include-lower');
 const upperInput = document.getElementById('include-upper');
 const numbersInput = document.getElementById('include-numbers');
 const symbolsInput = document.getElementById('include-symbols');
+
+const lengthOutput = document.getElementById('length-output');
