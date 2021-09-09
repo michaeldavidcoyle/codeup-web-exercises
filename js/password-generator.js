@@ -28,3 +28,8 @@ const numbersInput = document.getElementById('include-numbers');
 const symbolsInput = document.getElementById('include-symbols');
 
 const lengthOutput = document.getElementById('length-output');
+
+let passwordLength = 8;
+let upperCount = 1;
+let numbersCount = 1;
+let symbolsCount = 2;
