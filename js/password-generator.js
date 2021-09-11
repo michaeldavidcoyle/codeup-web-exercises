@@ -1,6 +1,45 @@
 "use strict";
 
 $(document).ready(function () {
+    function generatePassword() {
+        let chars = [],
+            char;
+        let counts = {
+            lower: lowerLength,
+            upper: upperLength,
+            numbers: numbersLength,
+            symbols: symbolsLength
+        }
+
+        while (chars.length < passwordLength) {
+            if (counts.lower > 0) {
+                char = CHARS.lower[Math.floor(Math.random() * CHARS.lower.length)];
+                chars.push(char);
+                counts.lower--;
+            }
+
+            if (counts.upper > 0) {
+                char = CHARS.upper[Math.floor(Math.random() * CHARS.upper.length)];
+                chars.push(char);
+                counts.upper--;
+            }
+
+            if (counts.numbers > 0) {
+                char = CHARS.numbers[Math.floor(Math.random() * CHARS.numbers.length)];
+                chars.push(char);
+                counts.numbers--;
+            }
+
+            if (counts.symbols > 0) {
+                char = CHARS.symbols[Math.floor(Math.random() * CHARS.symbols.length)];
+                chars.push(char);
+                counts.symbols--;
+            }
+        }
+
+        return chars.join('');
+    }
+
     function lowerCountHandler() {
         lowerLength = +$(this).val();
 
