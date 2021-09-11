@@ -130,6 +130,12 @@ $(document).ready(function () {
 
     lowerCount.attr('value', lowerLength);
 
+    lengthOutput.html(passwordLength);
+    lowerOutput.html(lowerLength);
+    upperOutput.html(upperLength);
+    numbersOutput.html(numbersLength);
+    symbolsOutput.html(symbolsLength);
+
     includeLower.change(() => {
         lowerFormGroup.toggleClass('d-none');
 
