@@ -22,6 +22,11 @@ $(document).ready(function () {
         numbersLength = $(this).val();
     }
 
+    function symbolsCountHandler() {
+        symbolsOutput.html($(this).val());
+        symbolsLength = $(this).val();
+    }
+
     const CHARS = {
         lower: [],
         upper: [],
@@ -81,4 +86,5 @@ $(document).ready(function () {
     lowerCount.change(lowerCountHandler);
     upperCount.change(upperCountHandler);
     numbersCount.change(numbersCountHandler);
+    symbolsCount.change(symbolsCountHandler);
 });
