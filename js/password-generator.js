@@ -75,6 +75,23 @@ $(document).ready(function () {
 
     function symbolsCountHandler() {
         symbolsLength = +$(this).val();
+
+        if (symbolsLength < lengthInput.attr('min')) {
+            symbolsLength = +lengthInput.attr('min');
+            symbolsCount.attr('value', symbolsLength);
+        }
+
+        if (passwordLength < lengthInput.attr("max")) {
+            passwordLength = totalChars();
+            lengthOutput.html(passwordLength);
+            lengthInput.attr('value', passwordLength);
+        }
+
+        while (totalChars() > passwordLength) {
+            symbolsLength -= 1;
+            symbolsCount.attr('value', symbolsLength);
+        }
+
         symbolsOutput.html(symbolsLength);
     }
 
