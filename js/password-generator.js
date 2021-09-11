@@ -55,4 +55,9 @@ let upperLength = 1;
 let numbersLength = 1;
 let symbolsLength = 2;
 
+includeLower.change(() => lowerFormGroup.toggleClass("d-none"));
+includeUpper.change(() => upperFormGroup.toggleClass("d-none"));
+includeNumbers.change(() => numbersFormGroup.toggleClass("d-none"));
+includeSymbols.change(() => symbolsFormGroup.toggleClass("d-none"));
+
 lengthInput.change(lengthHandler);
