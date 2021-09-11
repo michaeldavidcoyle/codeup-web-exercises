@@ -2,8 +2,8 @@
 
 function lengthHandler(event) {
     // console.log(this.value);
-    lengthOutput.html(this.value);
-    passwordLength = this.value;
+    lengthOutput.html($(this).val());
+    passwordLength = $(this).val();
 }
 
 const CHARS = {
