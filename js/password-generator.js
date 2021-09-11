@@ -39,6 +39,11 @@ const upperCount = $('#upper-count');
 const numbersCount = $('#numbers-count');
 const symbolsCount = $('#symbols-count');
 
+const lowerFormGroup = $('#lower-form-group');
+const upperFormGroup = $('#upper-form-group');
+const numbersFormGroup = $('#numbers-form-group');
+const symbolsFormGroup = $('#symbols-form-group');
+
 const lengthOutput = $('#length-output');
 const lowerOutput = $('#lower-count-output');
 const upperOutput = $('#upper-count-output');
