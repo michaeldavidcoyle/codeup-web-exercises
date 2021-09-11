@@ -12,6 +12,11 @@ $(document).ready(function () {
         lowerLength = $(this).val();
     }
 
+    function upperCountHandler() {
+        upperOutput.html($(this).val());
+        upperLength = $(this).val();
+    }
+
     const CHARS = {
         lower: [],
         upper: [],
@@ -69,4 +74,5 @@ $(document).ready(function () {
 
     lengthInput.change(lengthHandler);
     lowerCount.change(lowerCountHandler);
+    upperCount.change(upperCountHandler);
 });
