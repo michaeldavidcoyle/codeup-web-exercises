@@ -37,7 +37,7 @@ $(document).ready(function () {
             }
         }
 
-        return chars.join('');
+        $('#generated-password').html(chars.join(''));
     }
 
     function lowerCountHandler() {
@@ -215,4 +215,6 @@ $(document).ready(function () {
     upperCount.change(upperCountHandler);
     numbersCount.change(numbersCountHandler);
     symbolsCount.change(symbolsCountHandler);
+
+    $('#generate-btn').click(generatePassword);
 });
