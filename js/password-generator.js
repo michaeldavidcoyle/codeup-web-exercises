@@ -39,7 +39,23 @@ $(document).ready(function () {
             }
         }
 
-        $('#generated-password').html(chars.join(''));
+        $('#generated-password').html(shuffle(chars).join(''));
+    }
+
+    // Fisher-Yates shuffle, as demonstrated at https://bost.ocks.org/mike/shuffle/
+    function shuffle(array) {
+        let length = array.length,
+            index,
+            temp;
+
+        while (length > 0) {
+            index = Math.floor(Math.random() * length--);
+            temp = array[length];
+            array[length] = array[index];
+            array[index] = temp;
+        }
+
+        return array;
     }
 
     function randomArrayElement(array) {
