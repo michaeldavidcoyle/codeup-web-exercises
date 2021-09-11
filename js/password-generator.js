@@ -1,24 +1,17 @@
 "use strict";
 
 $(document).ready(function () {
-    function lengthHandler(event) {
-        // console.log(this.value);
-        passwordLength = +$(this).val();
-        lengthOutput.html(passwordLength);
-    }
-
     function lowerCountHandler() {
         lowerLength = +$(this).val();
 
-        if (lowerLength < lengthInput.attr('min')) {
-            lowerLength = +lengthInput.attr('min');
+        if (lowerLength < minTotalLength) {
+            lowerLength = minTotalLength;
             lowerCount.attr('value', lowerLength);
         }
 
-        if (passwordLength < lengthInput.attr("max")) {
+        if (passwordLength < maxTotalLength) {
             passwordLength = totalChars();
             lengthOutput.html(passwordLength);
-            lengthInput.attr('value', passwordLength);
         }
 
         while (totalChars() > passwordLength) {
@@ -32,15 +25,14 @@ $(document).ready(function () {
     function upperCountHandler() {
         upperLength = +$(this).val();
 
-        if (upperLength < lengthInput.attr('min')) {
-            upperLength = +lengthInput.attr('min');
+        if (upperLength < minTotalLength) {
+            upperLength = minTotalLength;
             upperCount.attr('value', upperLength);
         }
 
-        if (passwordLength < lengthInput.attr("max")) {
+        if (passwordLength < maxTotalLength) {
             passwordLength = totalChars();
             lengthOutput.html(passwordLength);
-            lengthInput.attr('value', passwordLength);
         }
 
         while (totalChars() > passwordLength) {
@@ -54,15 +46,14 @@ $(document).ready(function () {
     function numbersCountHandler() {
         numbersLength = +$(this).val();
 
-        if (numbersLength < lengthInput.attr('min')) {
-            numbersLength = +lengthInput.attr('min');
+        if (numbersLength < minTotalLength) {
+            numbersLength = minTotalLength;
             numbersCount.attr('value', numbersLength);
         }
 
-        if (passwordLength < lengthInput.attr("max")) {
+        if (passwordLength < maxTotalLength) {
             passwordLength = totalChars();
             lengthOutput.html(passwordLength);
-            lengthInput.attr('value', passwordLength);
         }
 
         while (totalChars() > passwordLength) {
@@ -76,15 +67,14 @@ $(document).ready(function () {
     function symbolsCountHandler() {
         symbolsLength = +$(this).val();
 
-        if (symbolsLength < lengthInput.attr('min')) {
-            symbolsLength = +lengthInput.attr('min');
+        if (symbolsLength < minTotalLength) {
+            symbolsLength = minTotalLength;
             symbolsCount.attr('value', symbolsLength);
         }
 
-        if (passwordLength < lengthInput.attr("max")) {
+        if (passwordLength < maxTotalLength) {
             passwordLength = totalChars();
             lengthOutput.html(passwordLength);
-            lengthInput.attr('value', passwordLength);
         }
 
         while (totalChars() > passwordLength) {
@@ -97,14 +87,6 @@ $(document).ready(function () {
 
     function totalChars() {
         return (+lowerLength) + (+upperLength) + (+numbersLength) + (+symbolsLength);
-    }
-
-    function revertLength(charLength) {
-        while (totalChars() > passwordLength) {
-            charLength -= 1;
-        }
-
-        return charLength;
     }
 
     const CHARS = {
@@ -128,8 +110,9 @@ $(document).ready(function () {
         }
     }
 
-    const lengthInput = $('#password-length');
-
+    const minTotalLength = 8;
+    const maxTotalLength = 32;
+    
     const includeLower = $('#include-lower');
     const includeUpper = $('#include-upper');
     const includeNumbers = $('#include-numbers');
@@ -151,18 +134,58 @@ $(document).ready(function () {
     const numbersOutput = $('#numbers-count-output');
     const symbolsOutput = $('#symbols-count-output');
 
-    let passwordLength = 8;
+    let passwordLength = minTotalLength;
     let lowerLength = passwordLength;
     let upperLength = 0;
     let numbersLength = 0;
     let symbolsLength = 0;
 
-    includeLower.change(() => lowerFormGroup.toggleClass("d-none"));
-    includeUpper.change(() => upperFormGroup.toggleClass("d-none"));
-    includeNumbers.change(() => numbersFormGroup.toggleClass("d-none"));
-    includeSymbols.change(() => symbolsFormGroup.toggleClass("d-none"));
+    lowerCount.attr('value', lowerLength);
 
-    lengthInput.change(lengthHandler);
+    includeLower.change(() => {
+        lowerFormGroup.toggleClass('d-none');
+
+        if (lowerFormGroup.hasClass('d-none')) {
+            lowerCount.attr('value', 0);
+        } else {
+            lowerCount.attr('value', lowerLength);
+            lowerCount.attr('min', 1);
+        }
+    });
+
+    includeUpper.change(() => {
+        upperFormGroup.toggleClass('d-none');
+
+        if (upperFormGroup.hasClass('d-none')) {
+            upperCount.attr('value', 0);
+        } else {
+            upperCount.attr('value', 1);
+            upperCount.attr('min', 1);
+        }
+    });
+
+    includeNumbers.change(() => {
+        numbersFormGroup.toggleClass('d-none');
+
+        if (numbersFormGroup.hasClass('d-none')) {
+            numbersCount.attr('value', 0);
+        } else {
+            numbersCount.attr('value', numbersLength);
+            numbersCount.attr('min', 1);
+        }
+    });
+
+    includeSymbols.change(() => {
+        symbolsFormGroup.toggleClass('d-none');
+
+        if (symbolsFormGroup.hasClass('d-none')) {
+            symbolsCount.attr('value', 0);
+        } else {
+            symbolsCount.attr('value', symbolsLength);
+            symbolsCount.attr('min', 1);
+        }
+    });
+    
     lowerCount.change(lowerCountHandler);
     upperCount.change(upperCountHandler);
     numbersCount.change(numbersCountHandler);
