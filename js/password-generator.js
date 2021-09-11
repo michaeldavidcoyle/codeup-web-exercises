@@ -145,45 +145,53 @@ $(document).ready(function () {
     includeLower.change(() => {
         lowerFormGroup.toggleClass('d-none');
 
-        if (lowerFormGroup.hasClass('d-none')) {
-            lowerCount.attr('value', 0);
-        } else {
-            lowerCount.attr('value', lowerLength);
-            lowerCount.attr('min', 1);
-        }
+        lowerLength = (lowerFormGroup.hasClass('d-none')) ? 0 : 1;
+        passwordLength = totalChars();
+
+        lowerCount.attr('min', lowerLength);
+        lowerCount.attr('value', lowerLength);
+
+        lowerOutput.html(lowerLength);
+        lengthOutput.html(passwordLength);
     });
 
     includeUpper.change(() => {
         upperFormGroup.toggleClass('d-none');
 
-        if (upperFormGroup.hasClass('d-none')) {
-            upperCount.attr('value', 0);
-        } else {
-            upperCount.attr('value', 1);
-            upperCount.attr('min', 1);
-        }
+        upperLength = (upperFormGroup.hasClass('d-none')) ? 0 : 1;
+        passwordLength = totalChars();
+
+        upperCount.attr('min', upperLength);
+        upperCount.attr('value', upperLength);
+
+        upperOutput.html(upperLength);
+        lengthOutput.html(passwordLength);
     });
 
     includeNumbers.change(() => {
         numbersFormGroup.toggleClass('d-none');
 
-        if (numbersFormGroup.hasClass('d-none')) {
-            numbersCount.attr('value', 0);
-        } else {
-            numbersCount.attr('value', numbersLength);
-            numbersCount.attr('min', 1);
-        }
+        numbersLength = (numbersFormGroup.hasClass('d-none')) ? 0 : 1;
+        passwordLength = totalChars();
+
+        numbersCount.attr('min', numbersLength);
+        numbersCount.attr('value', numbersLength);
+
+        numbersOutput.html(numbersLength);
+        lengthOutput.html(passwordLength);
     });
 
     includeSymbols.change(() => {
         symbolsFormGroup.toggleClass('d-none');
 
-        if (symbolsFormGroup.hasClass('d-none')) {
-            symbolsCount.attr('value', 0);
-        } else {
-            symbolsCount.attr('value', symbolsLength);
-            symbolsCount.attr('min', 1);
-        }
+        symbolsLength = (symbolsFormGroup.hasClass('d-none')) ? 0 : 1;
+        passwordLength = totalChars();
+
+        symbolsCount.attr('min', symbolsLength);
+        symbolsCount.attr('value', symbolsLength);
+
+        symbolsOutput.html(symbolsLength);
+        lengthOutput.html(passwordLength);
     });
     
     lowerCount.change(lowerCountHandler);
