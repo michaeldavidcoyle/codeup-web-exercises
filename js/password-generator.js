@@ -3,28 +3,57 @@
 $(document).ready(function () {
     function lengthHandler(event) {
         // console.log(this.value);
-        passwordLength = $(this).val();
+        passwordLength = +$(this).val();
         lengthOutput.html(passwordLength);
     }
 
     function lowerCountHandler() {
-        lowerLength = $(this).val();
+        lowerLength = +$(this).val();
+
+        if (lowerLength < lengthInput.attr('min')) {
+            lowerLength = +lengthInput.attr('min');
+            lowerCount.attr('value', lowerLength);
+        }
+
+        if (passwordLength < lengthInput.attr("max")) {
+            passwordLength = totalChars();
+            lengthOutput.html(passwordLength);
+            lengthInput.attr('value', passwordLength);
+        }
+
+        while (totalChars() > passwordLength) {
+            lowerLength -= 1;
+            lowerCount.attr('value', lowerLength);
+        }
+
         lowerOutput.html(lowerLength);
     }
 
     function upperCountHandler() {
-        upperLength = $(this).val();
+        upperLength = +$(this).val();
         upperOutput.html(upperLength);
     }
 
     function numbersCountHandler() {
-        numbersLength = $(this).val();
+        numbersLength = +$(this).val();
         numbersOutput.html(numbersLength);
     }
 
     function symbolsCountHandler() {
-        symbolsLength = $(this).val();
+        symbolsLength = +$(this).val();
         symbolsOutput.html(symbolsLength);
+    }
+
+    function totalChars() {
+        return (+lowerLength) + (+upperLength) + (+numbersLength) + (+symbolsLength);
+    }
+
+    function revertLength(charLength) {
+        while (totalChars() > passwordLength) {
+            charLength -= 1;
+        }
+
+        return charLength;
     }
 
     const CHARS = {
@@ -72,10 +101,10 @@ $(document).ready(function () {
     const symbolsOutput = $('#symbols-count-output');
 
     let passwordLength = 8;
-    let lowerLength = 5;
-    let upperLength = 1;
-    let numbersLength = 1;
-    let symbolsLength = 1;
+    let lowerLength = passwordLength;
+    let upperLength = 0;
+    let numbersLength = 0;
+    let symbolsLength = 0;
 
     includeLower.change(() => lowerFormGroup.toggleClass("d-none"));
     includeUpper.change(() => upperFormGroup.toggleClass("d-none"));
