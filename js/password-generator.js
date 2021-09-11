@@ -13,7 +13,6 @@ $(document).ready(function () {
         }
 
         lowerCount.attr('value', lowerLength);
-        lowerOutput.html(lowerLength);
 
         passwordLength = totalChars();
         lengthOutput.html(passwordLength);
@@ -31,7 +30,6 @@ $(document).ready(function () {
         }
 
         upperCount.attr('value', upperLength);
-        upperOutput.html(upperLength);
 
         passwordLength = totalChars();
         lengthOutput.html(passwordLength);
@@ -49,7 +47,6 @@ $(document).ready(function () {
         }
 
         numbersCount.attr('value', numbersLength);
-        numbersOutput.html(numbersLength);
 
         passwordLength = totalChars();
         lengthOutput.html(passwordLength);
@@ -67,7 +64,6 @@ $(document).ready(function () {
         }
 
         symbolsCount.attr('value', symbolsLength);
-        symbolsOutput.html(symbolsLength);
 
         passwordLength = totalChars();
         lengthOutput.html(passwordLength);
@@ -117,10 +113,6 @@ $(document).ready(function () {
     const symbolsFormGroup = $('#symbols-form-group');
 
     const lengthOutput = $('#length-output');
-    const lowerOutput = $('#lower-count-output');
-    const upperOutput = $('#upper-count-output');
-    const numbersOutput = $('#numbers-count-output');
-    const symbolsOutput = $('#symbols-count-output');
 
     let passwordLength = minTotalLength;
     let lowerLength = passwordLength;
@@ -131,10 +123,6 @@ $(document).ready(function () {
     lowerCount.attr('value', lowerLength);
 
     lengthOutput.html(passwordLength);
-    lowerOutput.html(lowerLength);
-    upperOutput.html(upperLength);
-    numbersOutput.html(numbersLength);
-    symbolsOutput.html(symbolsLength);
 
     includeLower.change(() => {
         lowerFormGroup.toggleClass('d-none');
@@ -145,7 +133,6 @@ $(document).ready(function () {
         lowerCount.attr('min', lowerLength);
         lowerCount.attr('value', lowerLength);
 
-        lowerOutput.html(lowerLength);
         lengthOutput.html(passwordLength);
     });
 
@@ -158,7 +145,6 @@ $(document).ready(function () {
         upperCount.attr('min', upperLength);
         upperCount.attr('value', upperLength);
 
-        upperOutput.html(upperLength);
         lengthOutput.html(passwordLength);
     });
 
@@ -171,7 +157,6 @@ $(document).ready(function () {
         numbersCount.attr('min', numbersLength);
         numbersCount.attr('value', numbersLength);
 
-        numbersOutput.html(numbersLength);
         lengthOutput.html(passwordLength);
     });
 
@@ -184,7 +169,6 @@ $(document).ready(function () {
         symbolsCount.attr('min', symbolsLength);
         symbolsCount.attr('value', symbolsLength);
 
-        symbolsOutput.html(symbolsLength);
         lengthOutput.html(passwordLength);
     });
     
