@@ -3,28 +3,28 @@
 $(document).ready(function () {
     function lengthHandler(event) {
         // console.log(this.value);
-        lengthOutput.html($(this).val());
         passwordLength = $(this).val();
+        lengthOutput.html(passwordLength);
     }
 
     function lowerCountHandler() {
-        lowerOutput.html($(this).val());
         lowerLength = $(this).val();
+        lowerOutput.html(lowerLength);
     }
 
     function upperCountHandler() {
-        upperOutput.html($(this).val());
         upperLength = $(this).val();
+        upperOutput.html(upperLength);
     }
 
     function numbersCountHandler() {
-        numbersOutput.html($(this).val());
         numbersLength = $(this).val();
+        numbersOutput.html(numbersLength);
     }
 
     function symbolsCountHandler() {
-        symbolsOutput.html($(this).val());
         symbolsLength = $(this).val();
+        symbolsOutput.html(symbolsLength);
     }
 
     const CHARS = {
