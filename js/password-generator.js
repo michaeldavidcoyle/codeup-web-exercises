@@ -53,6 +53,23 @@ $(document).ready(function () {
 
     function numbersCountHandler() {
         numbersLength = +$(this).val();
+
+        if (numbersLength < lengthInput.attr('min')) {
+            numbersLength = +lengthInput.attr('min');
+            numbersCount.attr('value', numbersLength);
+        }
+
+        if (passwordLength < lengthInput.attr("max")) {
+            passwordLength = totalChars();
+            lengthOutput.html(passwordLength);
+            lengthInput.attr('value', passwordLength);
+        }
+
+        while (totalChars() > passwordLength) {
+            numbersLength -= 1;
+            numbersCount.attr('value', numbersLength);
+        }
+
         numbersOutput.html(numbersLength);
     }
 
