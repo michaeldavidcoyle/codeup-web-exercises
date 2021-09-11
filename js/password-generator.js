@@ -4,85 +4,73 @@ $(document).ready(function () {
     function lowerCountHandler() {
         lowerLength = +$(this).val();
 
-        if (lowerLength < minTotalLength) {
-            lowerLength = minTotalLength;
-            lowerCount.attr('value', lowerLength);
+        while (totalChars() < minTotalLength) {
+            lowerLength += 1;
         }
 
-        if (passwordLength < maxTotalLength) {
-            passwordLength = totalChars();
-            lengthOutput.html(passwordLength);
-        }
-
-        while (totalChars() > passwordLength) {
+        while (totalChars() > maxTotalLength) {
             lowerLength -= 1;
-            lowerCount.attr('value', lowerLength);
         }
 
+        lowerCount.attr('value', lowerLength);
         lowerOutput.html(lowerLength);
+
+        passwordLength = totalChars();
+        lengthOutput.html(passwordLength);
     }
 
     function upperCountHandler() {
         upperLength = +$(this).val();
 
-        if (upperLength < minTotalLength) {
-            upperLength = minTotalLength;
-            upperCount.attr('value', upperLength);
+        while (totalChars() < minTotalLength) {
+            upperLength += 1;
         }
 
-        if (passwordLength < maxTotalLength) {
-            passwordLength = totalChars();
-            lengthOutput.html(passwordLength);
-        }
-
-        while (totalChars() > passwordLength) {
+        while (totalChars() > maxTotalLength) {
             upperLength -= 1;
-            upperCount.attr('value', upperLength);
         }
 
+        upperCount.attr('value', upperLength);
         upperOutput.html(upperLength);
+
+        passwordLength = totalChars();
+        lengthOutput.html(passwordLength);
     }
 
     function numbersCountHandler() {
         numbersLength = +$(this).val();
 
-        if (numbersLength < minTotalLength) {
-            numbersLength = minTotalLength;
-            numbersCount.attr('value', numbersLength);
+        while (totalChars() < minTotalLength) {
+            numbersLength += 1;
         }
 
-        if (passwordLength < maxTotalLength) {
-            passwordLength = totalChars();
-            lengthOutput.html(passwordLength);
-        }
-
-        while (totalChars() > passwordLength) {
+        while (totalChars() > maxTotalLength) {
             numbersLength -= 1;
-            numbersCount.attr('value', numbersLength);
         }
 
+        numbersCount.attr('value', numbersLength);
         numbersOutput.html(numbersLength);
+
+        passwordLength = totalChars();
+        lengthOutput.html(passwordLength);
     }
 
     function symbolsCountHandler() {
         symbolsLength = +$(this).val();
 
-        if (symbolsLength < minTotalLength) {
-            symbolsLength = minTotalLength;
-            symbolsCount.attr('value', symbolsLength);
+        while (totalChars() < minTotalLength) {
+            symbolsLength += 1;
         }
 
-        if (passwordLength < maxTotalLength) {
-            passwordLength = totalChars();
-            lengthOutput.html(passwordLength);
-        }
-
-        while (totalChars() > passwordLength) {
+        while (totalChars() > maxTotalLength) {
             symbolsLength -= 1;
-            symbolsCount.attr('value', symbolsLength);
         }
 
+        symbolsCount.attr('value', symbolsLength);
         symbolsOutput.html(symbolsLength);
+
+        passwordLength = totalChars();
+        lengthOutput.html(passwordLength);
     }
 
     function totalChars() {
