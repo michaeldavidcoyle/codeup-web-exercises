@@ -4,6 +4,7 @@ $(document).ready(function () {
     function generatePassword() {
         let chars = [],
             char;
+
         let counts = {
             lower: lowerLength,
             upper: upperLength,
@@ -11,33 +12,38 @@ $(document).ready(function () {
             symbols: symbolsLength
         }
 
+        function addCharacter(charGroup) {
+            char = randomArrayElement(charGroup);
+            chars.push(char);
+        }
+
         while (chars.length < passwordLength) {
             if (counts.lower > 0) {
-                char = CHARS.lower[Math.floor(Math.random() * CHARS.lower.length)];
-                chars.push(char);
+                addCharacter(CHARS.lower);
                 counts.lower--;
             }
 
             if (counts.upper > 0) {
-                char = CHARS.upper[Math.floor(Math.random() * CHARS.upper.length)];
-                chars.push(char);
+                addCharacter(CHARS.upper);
                 counts.upper--;
             }
 
             if (counts.numbers > 0) {
-                char = CHARS.numbers[Math.floor(Math.random() * CHARS.numbers.length)];
-                chars.push(char);
+                addCharacter(CHARS.numbers);
                 counts.numbers--;
             }
 
             if (counts.symbols > 0) {
-                char = CHARS.symbols[Math.floor(Math.random() * CHARS.symbols.length)];
-                chars.push(char);
+                addCharacter(CHARS.symbols);
                 counts.symbols--;
             }
         }
 
         $('#generated-password').html(chars.join(''));
+    }
+
+    function randomArrayElement(array) {
+        return array[Math.floor(Math.random() * array.length)];
     }
 
     function lowerCountHandler() {
