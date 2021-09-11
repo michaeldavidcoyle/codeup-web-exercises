@@ -50,4 +50,4 @@ let upperLength = 1;
 let numbersLength = 1;
 let symbolsLength = 2;
 
-lengthInput.addEventListener('change', lengthHandler);
+lengthInput.change(lengthHandler);
