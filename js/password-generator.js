@@ -31,6 +31,23 @@ $(document).ready(function () {
 
     function upperCountHandler() {
         upperLength = +$(this).val();
+
+        if (upperLength < lengthInput.attr('min')) {
+            upperLength = +lengthInput.attr('min');
+            upperCount.attr('value', upperLength);
+        }
+
+        if (passwordLength < lengthInput.attr("max")) {
+            passwordLength = totalChars();
+            lengthOutput.html(passwordLength);
+            lengthInput.attr('value', passwordLength);
+        }
+
+        while (totalChars() > passwordLength) {
+            upperLength -= 1;
+            upperCount.attr('value', upperLength);
+        }
+
         upperOutput.html(upperLength);
     }
 
