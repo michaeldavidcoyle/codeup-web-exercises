@@ -186,9 +186,9 @@ $(document).ready(function () {
     lengthOutput.html(passwordLength);
 
     includeLower.change(() => {
-        lowerFormGroup.toggleClass('d-none');
+        lowerFormGroup.toggleClass('invisible');
 
-        lowerLength = (lowerFormGroup.hasClass('d-none')) ? 0 : 1;
+        lowerLength = (lowerFormGroup.hasClass('invisible')) ? 0 : 1;
         passwordLength = totalChars();
 
         lowerCount.attr('min', lowerLength);
@@ -198,9 +198,9 @@ $(document).ready(function () {
     });
 
     includeUpper.change(() => {
-        upperFormGroup.toggleClass('d-none');
+        upperFormGroup.toggleClass('invisible');
 
-        upperLength = (upperFormGroup.hasClass('d-none')) ? 0 : 1;
+        upperLength = (upperFormGroup.hasClass('invisible')) ? 0 : 1;
         passwordLength = totalChars();
 
         upperCount.attr('min', upperLength);
@@ -210,9 +210,9 @@ $(document).ready(function () {
     });
 
     includeNumbers.change(() => {
-        numbersFormGroup.toggleClass('d-none');
+        numbersFormGroup.toggleClass('invisible');
 
-        numbersLength = (numbersFormGroup.hasClass('d-none')) ? 0 : 1;
+        numbersLength = (numbersFormGroup.hasClass('invisible')) ? 0 : 1;
         passwordLength = totalChars();
 
         numbersCount.attr('min', numbersLength);
@@ -222,9 +222,9 @@ $(document).ready(function () {
     });
 
     includeSymbols.change(() => {
-        symbolsFormGroup.toggleClass('d-none');
+        symbolsFormGroup.toggleClass('invisible');
 
-        symbolsLength = (symbolsFormGroup.hasClass('d-none')) ? 0 : 1;
+        symbolsLength = (symbolsFormGroup.hasClass('invisible')) ? 0 : 1;
         passwordLength = totalChars();
 
         symbolsCount.attr('min', symbolsLength);
