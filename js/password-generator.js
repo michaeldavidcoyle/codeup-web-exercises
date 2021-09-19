@@ -39,7 +39,9 @@ $(document).ready(function () {
             }
         }
 
-        $('#generated-password').html(shuffle(chars).join(''));
+        let password = shuffle(chars).join('');
+        $('#generated-password').html(password);
+        console.log(password, password.length);
     }
 
     // Fisher-Yates shuffle, as demonstrated at https://bost.ocks.org/mike/shuffle/
@@ -151,6 +153,8 @@ $(document).ready(function () {
         } else if (/[0-9]/.test(char)) {
             CHARS.numbers.push(char);
         } else {
+            if (char === '<') char = '&lt;';
+            if (char === '>') char = '&gt;';
             CHARS.symbols.push(char);
         }
     }
