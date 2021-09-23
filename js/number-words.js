@@ -1,6 +1,6 @@
 "use strict";
 
-function threeDigitGroup(number) {
+function groupToWords(number) {
     let words = '';
     let lastTwo = number % 100;
     let first = (number - lastTwo) / 100;
@@ -16,6 +16,17 @@ function threeDigitGroup(number) {
     return words;
 }
 
+function groupByThree(number) {
+    let groups = [];
+    let digits = number.toString().split('');
+
+    while (digits.length > 0) {
+        groups.unshift(digits.splice(-3, 3).join(''));
+    }
+
+    return groups.map(group => +group);
+}
+
 const units = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 const teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
 const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
@@ -27,5 +38,3 @@ for (let t = 2; t < 10; t++) {
         twoDigits.push(word);
     }
 }
-
-for (let i = 0; i < 300; i++) console.log(threeDigitGroup(i));
