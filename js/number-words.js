@@ -40,6 +40,11 @@ function groupByThree(number) {
     return groups.map(group => +group);
 }
 
+function inputHandler(event) {
+    event.preventDefault();
+    output.innerText = numberToWords(numberInput.value);
+}
+
 const units = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 const teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
 const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
@@ -56,7 +61,7 @@ for (let t = 2; t < 10; t++) {
 
 const numberInput = document.getElementById('number');
 const output = document.getElementById('output');
+const submit = document.getElementById('submit');
 
-numberInput.addEventListener('change', function() {
-    output.innerText = numberToWords(this.value);
-});
+numberInput.addEventListener('change', inputHandler);
+submit.addEventListener('click', inputHandler);
