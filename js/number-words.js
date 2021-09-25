@@ -43,7 +43,7 @@ function groupByThree(number) {
 const units = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 const teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
 const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
-const thousands = ['', ' thousand', ' million', ' billion', ' trillion', ' quadrillion'];
+const thousands = ['', 'thousand', 'million', 'billion', 'trillion', 'quadrillion'];
 
 const twoDigits = units.slice(0).concat(teens);
 
