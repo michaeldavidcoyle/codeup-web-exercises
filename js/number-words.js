@@ -46,3 +46,10 @@ for (let t = 2; t < 10; t++) {
         twoDigits.push(word);
     }
 }
+
+const numberInput = document.getElementById('number');
+const output = document.getElementById('output');
+
+numberInput.addEventListener('change', function() {
+    output.innerText = numberToWords(this.value);
+});
