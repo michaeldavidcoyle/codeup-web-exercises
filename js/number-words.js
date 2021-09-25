@@ -1,9 +1,16 @@
 "use strict";
 
 function numberToWords(number) {
-    let groups = groupByThree(number).reverse().map((group, i) => groupToWords(group) + thousands[i]);
+    let groups = groupByThree(number).reverse();
+    let words = [];
 
-    return groups.reverse().join(' ');
+    groups.forEach((group, i) => {
+        if (group > 0) {
+            words.push(thousands[i], groupToWords(group));
+        }
+    });
+
+    return words.reverse().join(' ');
 }
 
 function groupToWords(number) {
