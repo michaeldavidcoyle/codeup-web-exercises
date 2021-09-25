@@ -1,0 +1,36 @@
+body {
+    font-family: Menlo, monospace;
+    font-size: 3em;
+    margin: 0;
+}
+
+.container {
+    margin: 1em;
+    background-color: rgba(128, 128, 128, 0.33);
+    padding: 1em;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-group > * {
+    margin: 0.25em 0;
+}
+
+#number {
+    font-size: 3rem;
+    padding: 0.5rem;
+    border-radius: 0.25em;
+}
+
+#submit {
+    font-family: Menlo, monospace;
+    font-size: 2rem;
+    padding: 1em;
+    background-color: #444;
+    color: white;
+    border-radius: 0.5em;
+}
