@@ -1,19 +1,19 @@
 body {
     font-family: Menlo, monospace;
-    font-size: 3em;
+    font-size: 1.25em;
     margin: 0;
+    background-color: rgb(48, 44, 40);
 }
 
 .container {
-    margin: 1em;
-    background-color: rgba(128, 128, 128, 0.33);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 1em;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /*justify-content: space-around;*/
 }
 
 .form-group > * {
@@ -21,16 +21,59 @@ body {
 }
 
 #number {
-    font-size: 3rem;
+    font-family: Menlo, monospace;
+    font-size: 1.5rem;
+    text-align: center;
     padding: 0.5rem;
     border-radius: 0.25em;
 }
 
+#output {
+    font-size: 1em;
+}
+
 #submit {
     font-family: Menlo, monospace;
-    font-size: 2rem;
+    font-size: 1rem;
     padding: 1em;
-    background-color: #444;
+    background-color: rgb(48, 44, 40);
     color: white;
     border-radius: 0.5em;
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: 1.5em;
+    }
+
+    .container {
+        margin: 1.5em;
+    }
+
+    .form-group {
+        padding: 1em;
+    }
+
+    #output {
+        padding: 0 1em;
+    }
+
+    #submit {
+        font-size: 1.5rem;
+        padding: 0.5em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        margin: 3em;
+    }
+
+    .form-group {
+        padding: 2em;
+    }
+
+    #output {
+        padding: 0 2em;
+    }
 }
