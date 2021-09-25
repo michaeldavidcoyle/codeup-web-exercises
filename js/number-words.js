@@ -1,6 +1,6 @@
 "use strict";
 
-function numberToWords(number) {
+function numberToWords(number, isNegative) {
     let groups = groupByThree(number).reverse();
     let words = [];
 
@@ -9,6 +9,8 @@ function numberToWords(number) {
             words.push(thousands[i], groupToWords(group));
         }
     });
+
+    if (isNegative) words.push('negative');
 
     return words.reverse().join(' ');
 }
@@ -42,7 +44,9 @@ function groupByThree(number) {
 
 function inputHandler(event) {
     event.preventDefault();
-    output.innerText = numberToWords(numberInput.value);
+    let isNegative = numberInput.value < 0;
+    let number = Math.abs(numberInput.value);
+    output.innerText = numberToWords(number, isNegative);
 }
 
 const units = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
