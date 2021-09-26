@@ -20,6 +20,19 @@ body {
     margin: 0.25em 0;
 }
 
+.hidden {
+    display: none;
+}
+
+#error {
+    font-size: 0.8em;
+    background-color: hsl(355, 100%, 90%);
+    color: hsl(355, 100%, 25%);
+    padding: 1em;
+    border: 2px solid hsl(355, 100%, 25%);
+    border-radius: 0.25em;
+}
+
 #number {
     font-family: Menlo, monospace;
     font-size: 1.5rem;
@@ -54,6 +67,10 @@ body {
         padding: 1em;
     }
 
+    #error {
+        margin: 0 1em;
+    }
+
     #output {
         padding: 0 1em;
     }
@@ -71,6 +88,10 @@ body {
 
     .form-group {
         padding: 2em;
+    }
+
+    #error {
+        margin: 2.75em;
     }
 
     #output {

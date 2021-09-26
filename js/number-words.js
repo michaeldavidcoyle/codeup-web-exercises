@@ -44,9 +44,16 @@ function groupByThree(number) {
 
 function inputHandler(event) {
     event.preventDefault();
+    error.classList.add('hidden');
+
     let isNegative = numberInput.value < 0;
     let number = Math.abs(numberInput.value);
-    output.innerText = numberToWords(number, isNegative);
+
+    if (Number.isSafeInteger(number)) {
+        output.innerText = numberToWords(number, isNegative);
+    } else {
+        error.classList.remove('hidden');
+    }
 }
 
 const units = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
@@ -66,6 +73,7 @@ for (let t = 2; t < 10; t++) {
 const numberInput = document.getElementById('number');
 const output = document.getElementById('output');
 const submit = document.getElementById('submit');
+const error = document.getElementById('error');
 
 numberInput.addEventListener('change', inputHandler);
 submit.addEventListener('click', inputHandler);
